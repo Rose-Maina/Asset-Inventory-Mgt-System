@@ -1,8 +1,7 @@
 import React from 'react';
-import MainPage from './Components/MainPage';
-import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import './App.css';
+import MainPage from './Components/MainPage';
 
 
 
@@ -13,6 +12,7 @@ function App() {
       <Router>
         <MainPage/>
       </Router> 
+      
     </>
   )
 }
