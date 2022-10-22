@@ -1,8 +1,18 @@
-import React from 'react'
+import React from 'react';
 
 function MainPage() {
   return (
-    <div></div>
+    <>
+      {/* navbar section */}
+      <div>
+
+      </div>
+
+      {/* sidebar section */}
+      <div>
+
+      </div>
+    </>
   )
 }
 
