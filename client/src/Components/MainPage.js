@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import NavPage from './NavPage';
 import Sidebar from './Sidebar';
 
 function MainPage() {
@@ -16,6 +17,9 @@ function MainPage() {
           <Sidebar/>
         </div>
 
+        <div className='nav-page'>
+          <NavPage/>
+        </div>
       </div>
     </>
   )

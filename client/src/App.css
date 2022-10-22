@@ -71,3 +71,11 @@ body {
 .row #title {
     flex: 70%;
 }
+
+
+.nav-page {
+    margin-left: 5rem; 
+    background-color: white; 
+    min-width: 102%;
+    grid-column: span 10 / span 10; 
+}
