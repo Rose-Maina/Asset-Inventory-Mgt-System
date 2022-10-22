@@ -36,3 +36,38 @@ body {
     width: 250px;
     background-color: black;
 }
+
+
+.sidebar-list {
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar-list .row {
+    height: 60px;
+    text-decoration: none;
+    display: flex;
+    font-size: 1.2rem;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+}
+
+.sidebar-list .row:hover {
+    cursor: pointer;
+    background-color: #293846;
+}
+
+.sidebar-list #active {
+    background-color: #293846;
+}
+
+.row #icon {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+}
+
+.row #title {
+    flex: 70%;
+}
