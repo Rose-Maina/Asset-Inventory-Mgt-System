@@ -25,3 +25,14 @@ body {
     font-size: 1.5rem;
     padding-left: 40px;
 }
+
+.sidebar-container {
+    display: grid; 
+    grid-template-columns: repeat(12, minmax(0, 1fr)); 
+}
+
+.side-bar {
+    height: 100vh;
+    width: 250px;
+    background-color: black;
+}
