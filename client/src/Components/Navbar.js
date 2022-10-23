@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {FaBars} from 'react-icons/fa';
 
 function Navbar() {
   return (
-    <div>Navbar</div>
+    <>
+      <div className='nav-bar'>
+        <div className='menu-bars'>
+          <FaBars/>
+        </div>
+
+        <div>
+          <p className='title-admin'>Admin</p>
+        </div>
+      </div>
+    </>
   )
 }
 
-export default Navbar
+export default Navbar;
