@@ -4,17 +4,20 @@ function Request() {
   return (
     <>
       <div className="container py-5">
+        <div className="py-3">
+            <h3>Requests</h3>
+        </div>
         <div className="card text-bg-danger mb-3" style={{ maxWidth: 300 }}>
           <div className="card-body">
             <h4 className="card-title">0</h4>
             <h4 className="card-title">Total Requests</h4>
-            <a
+            {/* <a
               href="#"
               className="card-link"
               style={{ color: "white", textDecoration: "none" }}
             >
               More Info..{" "}
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
@@ -55,9 +58,10 @@ function Request() {
                     </span>
                   </th>
                   <th>Title</th>
+                  <th>Description</th>
                   <th>Urgency</th>
                   <th>Status</th>
-                    <th>Actions</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,6 +79,7 @@ function Request() {
                   </td>
                   <td>Furniture</td>
 
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td>
@@ -228,7 +233,7 @@ function Request() {
           <div className="modal-content">
             <form>
               <div className="modal-header">
-                <h4 className="modal-title">Delete category</h4>
+                <h4 className="modal-title">Delete Request</h4>
                 <button
                   type="button"
                   className="close"
