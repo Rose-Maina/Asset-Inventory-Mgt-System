@@ -1,228 +1,204 @@
+
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Category = () => {
   return (
-    <div>
-      {/* Content Wrapper. Contains page content  */}
-      <div class="content-wrapper">
-        {/* Content Header (Page header)  */}
-        <section class="content-header">
-          <h1>
-            Manage
-            <small>Category</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li>
-              
-              
-                <i class="fa fa-dashboard"></i> Home
-            
-            </li>
-            <li class="active">Category</li>
-          </ol>
-        </section>
+    <>      
+<div class="container-xl">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h2>Manage <b>Category</b></h2>
+					</div>
+					<div class="col-sm-6">
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Category</span></a>
+						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete all</span></a>						
+					</div>
+				</div>
+			</div>
+   
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll"/>
+								<label for="selectAll"></label>
+							</span>
+						</th>
+						<th>Name</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1"/>
+								<label for="checkbox1"></label>
+							</span>
+						</td>
+						<td>Furniture</td>
+						
+						
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox2" name="options[]" value="1"/>
+								<label for="checkbox2"></label>
+							</span>
+						</td>
+					
+						<td>Factory machinery</td>
+						
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox3" name="options[]" value="1"/>
+								<label for="checkbox3"></label>
+							</span>
+						</td>
+				
+						<td>Furniture</td>
+				
+				
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox4" name="options[]" value="1"/>
+								<label for="checkbox4"></label>
+							</span>
+						</td>
+					
+						<td>Electronic</td>
+						
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>					
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox5" name="options[]" value="1"/>
+								<label for="checkbox5"></label>
+							</span>
+						</td>
+				
+						<td>Motor Vehicle</td>
+						
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr> 
+				</tbody>
+			</table>
+			<div class="clearfix">
+				<div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+				<ul class="pagination">
+					<li class="page-item disabled"><a href="#">Previous</a></li>
+					<li class="page-item"><a href="#" class="page-link">1</a></li>
+					<li class="page-item"><a href="#" class="page-link">2</a></li>
+					<li class="page-item active"><a href="#" class="page-link">3</a></li>
+					<li class="page-item"><a href="#" class="page-link">4</a></li>
+					<li class="page-item"><a href="#" class="page-link">5</a></li>
+					<li class="page-item"><a href="#" class="page-link">Next</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>        
+</div>
+{/* Edit Modal   */}
+<div id="addEmployeeModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form>
+				<div class="modal-header">						
+					<h4 class="modal-title">Asset</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">					
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" class="form-control" required/>
+					</div>						
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"/>
+					<input type="submit" class="btn btn-success" value="Add"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+ {/* Edit Modal   */}
+<div id="editEmployeeModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form>
+				<div class="modal-header">						
+					<h4 class="modal-title">Edit category</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">					
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" class="form-control" required/>
+					</div>			
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"/>
+					<input type="submit" class="btn btn-info" value="Save"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+ {/* Delete Modal */}
+<div id="deleteEmployeeModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form>
+				<div class="modal-header">						
+					<h4 class="modal-title">Delete category</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">					
+					<p>Are you sure you want to delete these Records?</p>
+					<p class="text-warning"><small>This action cannot be undone.</small></p>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"/>
+					<input type="submit" class="btn btn-danger" value="Delete"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
-        {/* Main content  */}
-        <section class="content">
-          {/* Small boxes (Stat box) */}
-          <div class="row">
-            <div class="col-md-12 col-xs-12">
-              <div id="messages"></div>
-              <button
-                class="btn btn-primary"
-                data-toggle="modal"
-                data-target="#addModal"
-              >
-                Add Category
-              </button>
-              <br /> <br />
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Manage Category</h3>
-                </div>
-                {/* box-header  */}
-                <div class="box-body">
-                  <table
-                    id="manageTable"
-                    class="table table-bordered table-striped"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Category name</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
-                {/* box-body  */}
-              </div>
-              {/* /.box  */}
-            </div>
-            {/* col-md-12  */}
-          </div>
-          {/* /.row - */}
-        </section>
-        {/* /.content  */}
-      </div>
-      {/* /.content-wrapper  */}
 
-      {/* create brand modal  */}
-      <div class="modal fade" tabindex="-1" role="dialog" id="addModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title">Add Category</h4>
-            </div>
 
-            <form>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="brand_name">Category Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="category_name"
-                    name="category_name"
-                    placeholder="Enter category name"
-                    autocomplete="off"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="active">Status</label>
-                  <select class="form-control" id="active" name="active">
-                    <option value="1">Active</option>
-                    <option value="2">Inactive</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-default"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="submit" class="btn btn-primary">
-                  Save changes
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* edit brand modal  */}
-      <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title">Edit Category</h4>
-            </div>
-
-            <form id="updateForm">
-              <div class="modal-body">
-                <div id="messages"></div>
-
-                <div class="form-group">
-                  <label for="brand_name">Category Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="edit_category_name"
-                    name="edit_category_name"
-                    placeholder="Enter category name"
-                    autocomplete="off"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="active">Status</label>
-                  <select
-                    class="form-control"
-                    id="edit_active"
-                    name="edit_active"
-                  >
-                    <option value="1">Active</option>
-                    <option value="2">Inactive</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-default"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="submit" class="btn btn-primary">
-                  Save changes
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* remove brand modal  */}
-      <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title">Remove Category</h4>
-            </div>
-
-            <form  id="removeForm">
-              <div class="modal-body">
-                <p>Do you really want to remove?</p>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-default"
-                  data-dismiss="modal"
-                >
-              
-                </button>
-                <button type="submit" class="btn btn-primary">
-                  Save changes
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+        </>
+  
   );
 };
 
