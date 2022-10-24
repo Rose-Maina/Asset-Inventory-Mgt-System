@@ -16,6 +16,7 @@ export const SidebarData=[
         path: "/dashboard",
         icon: <MdIcons.MdDashboard />,
       },
+      
       {
         title: "Users",
         path: "/users",
