@@ -1,10 +1,17 @@
 import React from "react";
 
 
+
 function Dashboard() {
     return (
-        
-          <div>Dashboard</div>
+     
+  <div>
+      <h1>dashboard</h1>
+
+  </div>
+
+
+ 
         
     )
 }
