@@ -198,7 +198,7 @@ function Request() {
           <div className="modal-content">
             <form>
               <div className="modal-header">
-                <h4 className="modal-title">Manage Request</h4>
+                <h4 className="modal-title">Update Request Status</h4>
                 <button
                   type="button"
                   className="close"
@@ -208,12 +208,15 @@ function Request() {
                   &times;
                 </button>
               </div>
-              <div className="modal-body">
-                <div className="form-group">
-                  <label>Status</label>
-                  <input type="text" className="form-control" required />
-                </div>
-              </div>
+                <select className="btn btn-info">
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Out of Stock">Out of Stock</option>
+                </select>
+                {/* </div>
+              </div> */}
+
               <div className="modal-footer">
                 <input
                   type="button"
@@ -221,7 +224,7 @@ function Request() {
                   data-dismiss="modal"
                   value="Cancel"
                 />
-                <input type="submit" className="btn btn-info" value="Save" />
+                <input type="submit" className="btn btn-info" value="Update" />
               </div>
             </form>
           </div>
