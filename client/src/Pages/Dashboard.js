@@ -33,7 +33,7 @@ function Dashboard() {
                                 <h5 className="card-title">0</h5>
                                 <p className="card-text">Total Categories</p>
                             </div>
-                            <a href="#" className="small-box-footer" style={{textDecoration: 'none', color:'white'}}>More info <i className="bi bi-arrow-right-circle-fill" /></a>
+                            <a href="#" className="small-box-footer" style={{textDecoration: 'none', color:'black'}}>More info <i className="bi bi-arrow-right-circle-fill" /></a>
                         </div>
                     </div>
                     <div className="col">
