@@ -213,10 +213,7 @@ function Assets() {
 		</div>
 	</div>
 </div>
-
-
-
-        </>
+</>
     )
 }
 
