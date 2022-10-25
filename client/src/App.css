@@ -72,7 +72,10 @@ body {
     flex: 70%;
 }
 
-
+.bg-success {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+}
 .nav-page {
     margin-left: 5rem; 
     background-color: white; 
@@ -299,3 +302,5 @@ table.table .avatar {
 .modal form label {
 	font-weight: normal;
 }	
+
+
