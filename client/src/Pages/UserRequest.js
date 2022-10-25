@@ -14,25 +14,28 @@ function UserRequest() {
                 <h4 className="card-title">0</h4>
                 <h4 className="card-title">Total Assets</h4>
                 <a
-              href="#"
-              className="small-box-footer"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              More info <i className="bi bi-arrow-right-circle-fill"/>
-            </a>
+                  href="#"
+                  className="small-box-footer"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  More info <i className="bi bi-arrow-right-circle-fill" />
+                </a>
               </div>
             </div>
-            <div className="card text-bg-danger mb-3" style={{ maxWidth: 300 }}>
+            <div
+              className="card text mb-3"
+              style={{ maxWidth: 300, backgroundColor: "#a764fc" }}
+            >
               <div className="card-body">
                 <h4 className="card-title">0</h4>
                 <h4 className="card-title">Total Requests</h4>
                 <a
-              href="#"
-              className="small-box-footer"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              More info <i className="bi bi-arrow-right-circle-fill"/>
-            </a>
+                  href="#"
+                  className="small-box-footer"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  More info <i className="bi bi-arrow-right-circle-fill" />
+                </a>
               </div>
             </div>
           </div>
@@ -81,9 +84,7 @@ function UserRequest() {
                   </th>
                   <th>Title</th>
                   <th>Description</th>
-                  <th>Urgency</th>
                   <th>Status</th>
-                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -104,34 +105,6 @@ function UserRequest() {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td>
-                    <a
-                      href="#editRequestModal"
-                      className="edit"
-                      data-toggle="modal"
-                    >
-                      <i
-                        className="material-icons"
-                        data-toggle="tooltip"
-                        title="Edit"
-                      >
-                        &#xE254;
-                      </i>
-                    </a>
-                    <a
-                      href="#deleteRequestModal"
-                      className="delete"
-                      data-toggle="modal"
-                    >
-                      <i
-                        className="material-icons"
-                        data-toggle="tooltip"
-                        title="Delete"
-                      >
-                        &#xE872;
-                      </i>
-                    </a>
-                  </td>
                 </tr>
               </tbody>
             </table>
@@ -178,48 +151,17 @@ function UserRequest() {
           </div>
         </div>
       </div>
+
       {/* Edit Modal   */}
-      <div id="addRequestModal" className="modal fade">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <form>
-              <div className="modal-header">
-                <h4 className="modal-title">Requests</h4>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-hidden="true"
-                >
-                  &times;
-                </button>
-              </div>
-              <div className="modal-body">
-                <div className="form-group">
-                  <label>Status</label>
-                  <input type="text" className="form-control" required />
-                </div>
-              </div>
-              <div className="modal-footer">
-                <input
-                  type="button"
-                  className="btn btn-default"
-                  data-dismiss="modal"
-                  value="Cancel"
-                />
-                <input type="submit" className="btn btn-success" value="Add" />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      {/* Edit Modal   */}
+
+      {/* Delete Modal   */}
+
       <div id="editRequestModal" className="modal fade">
         <div className="modal-dialog">
           <div className="modal-content">
             <form>
               <div className="modal-header">
-                <h4 className="modal-title">Update Request Status</h4>
+                <h4 className="modal-title">Make Request</h4>
                 <button
                   type="button"
                   className="close"
@@ -229,30 +171,82 @@ function UserRequest() {
                   &times;
                 </button>
               </div>
-              <select className="btn btn-info">
-                <option value="Pending">Pending</option>
-                <option value="Approved">Approved</option>
-                <option value="Rejected">Rejected</option>
-                <option value="Out of Stock">Out of Stock</option>
-              </select>
-              {/* </div>
-              </div> */}
 
-              <div className="modal-footer">
-                <input
-                  type="button"
-                  className="btn btn-default"
-                  data-dismiss="modal"
-                  value="Cancel"
-                />
-                <input type="submit" className="btn btn-info" value="Update" />
+              <div id="addEmployeeModal" class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <form>
+                      <div class="modal-header">
+                        <h4 class="modal-title">Make New Request</h4>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-hidden="true"
+                        >
+                          &times;
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-group">
+                          <label>Title</label>
+                          <input type="text" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label>Description</label>
+                          <input type="text" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label>Quantity</label>
+                          <input type="text" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label>Urgency</label>
+                          <input type="text" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label>Request Type</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="New or Repair"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label>AssetID</label>
+                          <input type="text" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label>UserID</label>
+                          <input type="text" class="form-control" required />
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <input
+                          type="button"
+                          class="btn btn-default"
+                          data-dismiss="modal"
+                          value="Cancel"
+                        />
+                        <input
+                          type="submit"
+                          class="btn btn-success"
+                          value="Add"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
       {/* Delete Modal */}
-      <div id="deleteRequestModal" className="modal fade">
+
+
+      {/* <div id="deleteRequestModal" className="modal fade">
         <div className="modal-dialog">
           <div className="modal-content">
             <form>
@@ -289,7 +283,9 @@ function UserRequest() {
             </form>
           </div>
         </div>
-      </div>
+      </div> */}
+
+
     </>
   );
 }
