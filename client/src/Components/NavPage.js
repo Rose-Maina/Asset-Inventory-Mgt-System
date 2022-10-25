@@ -9,7 +9,7 @@ import Request from "../Pages/Request";
 import Profile from "../Pages/Profile";
 import Setting from "../Pages/Setting";
 import Logout from "../Pages/Logout";
-import Login from "./Login";
+// import Login from "./Login";
 
 
 
@@ -17,7 +17,7 @@ function NavPage() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Login/>}/>
+                {/* <Route path="/" element={<Login/>}/> */}
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/users" element={<Users/>}/>
                 <Route path="/department" element={<Department/>}/>
