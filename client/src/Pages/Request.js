@@ -5,19 +5,19 @@ function Request() {
     <>
       <div className="container py-5">
         <div className="py-3">
-            <h3>Requests</h3>
+          <h3>Requests</h3>
         </div>
         <div className="card text-bg-danger mb-3" style={{ maxWidth: 300 }}>
           <div className="card-body">
             <h4 className="card-title">0</h4>
             <h4 className="card-title">Total Requests</h4>
-            {/* <a
+            <a
               href="#"
-              className="card-link"
-              style={{ color: "white", textDecoration: "none" }}
+              className="small-box-footer"
+              style={{ textDecoration: "none", color: "white" }}
             >
-              More Info..{" "}
-            </a> */}
+              More info <i className="bi bi-arrow-right-circle-fill"/>
+            </a>
           </div>
         </div>
       </div>
@@ -30,14 +30,12 @@ function Request() {
             <div className="table-title">
               <div className="row">
                 <div className="col-sm-6">
-                  <h3>
-                    Manage Requests
-                  </h3>
+                  <h3>Manage Requests</h3>
                 </div>
                 <div className="col-sm-6">
-                  {/* <a href="#addEmployeeModal" className="btn btn-success" data-toggle="modal"><i className="material-icons">&#xE147;</i> <span>Add New Category</span></a> */}
+                  {/* <a href="#addRequestModal" className="btn btn-success" data-toggle="modal"><i className="material-icons">&#xE147;</i> <span>Add New Category</span></a> */}
                   <a
-                    href="#deleteEmployeeModal"
+                    href="#deleteRequestModal"
                     className="btn btn-danger"
                     data-toggle="modal"
                   >
@@ -84,7 +82,7 @@ function Request() {
                   <td></td>
                   <td>
                     <a
-                      href="#editEmployeeModal"
+                      href="#editRequestModal"
                       className="edit"
                       data-toggle="modal"
                     >
@@ -97,7 +95,7 @@ function Request() {
                       </i>
                     </a>
                     <a
-                      href="#deleteEmployeeModal"
+                      href="#deleteRequestModal"
                       className="delete"
                       data-toggle="modal"
                     >
@@ -111,7 +109,6 @@ function Request() {
                     </a>
                   </td>
                 </tr>
-
               </tbody>
             </table>
             <div className="clearfix">
@@ -158,7 +155,7 @@ function Request() {
         </div>
       </div>
       {/* Edit Modal   */}
-      <div id="addEmployeeModal" className="modal fade">
+      <div id="addRequestModal" className="modal fade">
         <div className="modal-dialog">
           <div className="modal-content">
             <form>
@@ -193,7 +190,7 @@ function Request() {
         </div>
       </div>
       {/* Edit Modal   */}
-      <div id="editEmployeeModal" className="modal fade">
+      <div id="editRequestModal" className="modal fade">
         <div className="modal-dialog">
           <div className="modal-content">
             <form>
@@ -208,13 +205,13 @@ function Request() {
                   &times;
                 </button>
               </div>
-                <select className="btn btn-info">
-                    <option value="Pending">Pending</option>
-                    <option value="Approved">Approved</option>
-                    <option value="Rejected">Rejected</option>
-                    <option value="Out of Stock">Out of Stock</option>
-                </select>
-                {/* </div>
+              <select className="btn btn-info">
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Out of Stock">Out of Stock</option>
+              </select>
+              {/* </div>
               </div> */}
 
               <div className="modal-footer">
@@ -231,7 +228,7 @@ function Request() {
         </div>
       </div>
       {/* Delete Modal */}
-      <div id="deleteEmployeeModal" className="modal fade">
+      <div id="deleteRequestModal" className="modal fade">
         <div className="modal-dialog">
           <div className="modal-content">
             <form>
