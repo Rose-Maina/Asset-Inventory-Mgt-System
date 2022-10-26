@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaBars} from 'react-icons/fa';
 
-function Navbar() {
+function FinanceNavbar() {
   return (
     <>
       <div className='nav-bar'>
@@ -10,7 +10,7 @@ function Navbar() {
         </div>
 
         <div>
-          <p className='title-admin'>Admin</p>
+          <p className='title-admin'>Finance</p>
         </div>
       </div>
     </>
@@ -18,4 +18,4 @@ function Navbar() {
 }
 
 
-export default Navbar;
+export default FinanceNavbar;
