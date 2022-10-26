@@ -16,6 +16,10 @@ function RequestList() {
               </div>
             </div>
 
+            <div class="col-sm-6">
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Request</span></a>
+					  </div>
+
             <table className="table table-striped table-hover">
               <thead>
                 <tr>
@@ -27,8 +31,10 @@ function RequestList() {
                   </th>
                   <th>Title</th>
                   <th>Description</th>
+                  <th>Quantity</th>
+                  <th>Request_type</th>
                   <th>Urgency</th>
-                  <th>Actions</th>
+                  <th>Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -93,11 +99,7 @@ function RequestList() {
                     1
                   </a>
                 </li>
-                <li className="page-item">
-                  <a href="#" className="page-link">
-                    2
-                  </a>
-                </li>
+      
                 <li className="page-item">
                   <a href="#" className="page-link">
                     Next
@@ -175,45 +177,6 @@ function RequestList() {
                   value="Cancel"
                 />
                 <input type="submit" className="btn btn-info" value="Update" />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      {/* Delete Modal */}
-      <div id="deleteRequestModal" className="modal fade">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <form>
-              <div className="modal-header">
-                <h4 className="modal-title">Delete Request</h4>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-hidden="true"
-                >
-                  &times;
-                </button>
-              </div>
-              <div className="modal-body">
-                <p>Are you sure you want to delete this Request?</p>
-                <p className="text-warning">
-                  <small>This action cannot be undone.</small>
-                </p>
-              </div>
-              <div className="modal-footer">
-                <input
-                  type="button"
-                  className="btn btn-default"
-                  data-dismiss="modal"
-                  value="Cancel"
-                />
-                <input
-                  type="submit"
-                  className="btn btn-danger"
-                  value="Delete"
-                />
               </div>
             </form>
           </div>
