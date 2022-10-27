@@ -1,14 +1,13 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
-import Dashboard from "../Pages/Dashboard";
-import Users from "../Pages/Users";
-import Department from "../Pages/Department";
-import Category from "../Pages/Category";
-import Assets from "../Pages/Assets";
-import Request from "../Pages/Request";
-import Profile from "../Pages/Profile";
-import Setting from "../Pages/Setting";
-import Logout from "../Pages/Logout";
+import Dashboard from "../Pages/Admin/Dashboard";
+import Users from "../Pages/Admin/Users";
+import Department from "../Pages/Admin/Department";
+import Category from "../Pages/Admin/Category";
+import Assets from "../Pages/Admin/Assets";
+import Request from "../Pages/Admin/Request";
+import Profile from "../Pages/Admin/Profile";
+import Logout from "../Pages/Admin/Logout";
 // import Login from "./Login";
 
 
@@ -25,7 +24,6 @@ function NavPage() {
                 <Route path="/assets" element={<Assets/>}/>
                 <Route path="/request" element={<Request/>}/>
                 <Route path="/profile" element={<Profile/>}/>
-                <Route path="/setting" element={<Setting/>}/>
                 <Route path="/logout" element={<Logout/>}/>
             </Routes>
         </>
