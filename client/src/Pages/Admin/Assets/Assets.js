@@ -63,6 +63,7 @@ function Assets() {
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						</td>
 					</tr>
+				))}
 				</tbody>
 			</table> 
 			
