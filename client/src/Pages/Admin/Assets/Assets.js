@@ -23,7 +23,7 @@ function Assets() {
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Manage <b>Assets</b></h2>
+						<h2>Requests</h2>
 					</div>
 					<div class="col-sm-6">
 					<AddAsset onAddAsset={handleAddAsset}/>
@@ -42,9 +42,8 @@ function Assets() {
 							</span>
 						</th>
 						<th>Name</th>
-            			<th>Category</th>
-						{/* <th>Image</th> */}
-						<th>Actions</th>
+						<th>Status</th>
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -57,18 +56,13 @@ function Assets() {
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-
-						<td>{asset.name}</td>
-            			<td>{asset.category.name}</td>
-						{/* <td>{asset.image}</td> */}
+						<td>Armchair</td>
+						<td>Approved</td>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						</td>
-						
 					</tr>
-					
-					))}
 				</tbody>
 			</table> 
 			
@@ -122,10 +116,7 @@ function Assets() {
 						<label>Name</label>
 						<input type="text" class="form-control" required/>
 					</div>
-					<div class="form-group">
-						<label>Category</label>
-						<input type="email" class="form-control" required/>
-					</div>
+					
 					<div class="form-group">
 						<label>Status</label>
 						<textarea class="form-control" required></textarea>

@@ -1,14 +1,14 @@
 import React from 'react';
-import {SidebarData} from './SidebarData';
+import {SideData} from './SidebarData';
 import {NavLink} from 'react-router-dom';
 
 
-function Sidebar() {
+function FinanceSidebar() {
     return (
         <>
             <div className="sidebar-list">
             
-                {SidebarData.map((val, key)=>{
+                {SideData.map((val, key)=>{
                         return(
                             <div key={key}>
                                 <NavLink to={val.path}
@@ -31,4 +31,4 @@ function Sidebar() {
 }
 
 
-export default Sidebar;
+export default FinanceSidebar;
