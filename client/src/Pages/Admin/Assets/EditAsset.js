@@ -1,24 +1,41 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-const AddAsset = () => {
+const EditAsset = () => {
+  const { assetid } = useParams();
+
+  useEffect(() => {
+    fetch("/assets/" + assetid)
+      .then((res) => {
+        return res.json();
+      })
+      .then((resp) => {
+        setName(resp.name);
+        // setImage(resp.image);
+        setCategory(resp.category.name);
+      })
+      .catch((err) => {
+        // console.log(err.message);
+      });
+  }, []);
+
   const [name, setName] = useState("");
-  const [image, setImage] = useState("");
+  // const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
 
   const navigate = useNavigate();
 
-  const handleAddSubmit = (e) => {
+  const handleEditSubmit = (e) => {
     e.preventDefault();
-    const assetData = { name, image, category };
+    const assetData = { name, category };
 
-    fetch("/assets", {
-      method: "POST",
+    fetch("/assets" + assetid, {
+      method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(assetData),
     })
       .then((res) => {
-        alert("Asset Added Successfully.");
+        alert("Update Saved Successfully.");
         navigate("/assets");
       })
       .catch((err) => {
@@ -32,33 +49,30 @@ const AddAsset = () => {
         <div>
           <div style={{ maxWidth: 400 }}>
             <div>
-              <form onSubmit={handleAddSubmit}>
+              <form onSubmit={handleEditSubmit}>
                 <div>
-                  <h4 className="modal-title">Add New Asset</h4>
+                  <h4 className="modal-title">Edit Asset</h4>
                 </div>
                 <div>
                   <div className="form-group">
                     <label>Name</label>
-                    <input type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" required />
+                    <input type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" />
                   </div>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label>Image Url</label>
                     <input type="text" value={image} onChange={e=>setImage(e.target.value)} className="form-control" required />
-                  </div>
+                  </div> */}
                   <div className="form-group">
                     <label>Category</label>
-                    <input type="text" value={category} onChange={e=>setCategory(e.target.value)} className="form-control" required>
-                    {/* <option value="Chrome"/>
-                    <option value="Firefox"/> */}
-                    </input>
+                    <input type="text" value={category} onChange={e=>setCategory(e.target.value)} className="form-control" /> 
                   </div>
                 </div>
                 <div>
                   <Link to="/assets" className="btn btn-default">
                     Cancel
                   </Link>
-                  <button type="submit" className="btn btn-success" value="Add">
-                    Add
+                  <button type="submit" className="btn btn-success" value="Update">
+                    Update 
                   </button>
                 </div>
               </form>
@@ -70,4 +84,4 @@ const AddAsset = () => {
   );
 };
 
-export default AddAsset;
+export default EditAsset;
