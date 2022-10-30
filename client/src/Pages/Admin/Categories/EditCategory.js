@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-function EditDepartment() {
+function EditCategory() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -40,7 +40,8 @@ function EditDepartment() {
           onChange={(e) => setName(e.target.value)}
           className="bg-white/10 outline-none font-normal border border-zinc-400 py-6 pl-6 mt-4"
           type="text"
-          placeholder="Enter your Department name"
+          
+          placeholder="category name"
         />
         {/* <input
           value={email}
@@ -61,12 +62,13 @@ function EditDepartment() {
           type="submit"
           onClick={Update}
         >
-          UPDATE Department
+          UPDATE CATEGORY
         </button>
       </form>
     </div>
   );
 }
 
-export default EditDepartment;
+export default EditCategory;
+
 
