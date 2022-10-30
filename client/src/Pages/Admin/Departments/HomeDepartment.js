@@ -23,7 +23,7 @@ function HomeDepartment() {
   return (
     <>
       <div className="w-[100vw] h-full justify-center items-center flex flex-col px-10 py-8 mt-8">
-        <h1 className="text-3xl font-bold">DATA TABLE</h1>
+        <h1 className="text-3xl font-bold">Our Departments</h1>
         <div className="flex flex-col">
           <div className="overflow-x-auto mt-8 sm:-mx-6 items-center lg:-mx-8">
             <div className="py-4 inline-block min-w-full sm:px-6 lg:px-8">
@@ -41,9 +41,9 @@ function HomeDepartment() {
                         scope="col"
                         className="text-sm font-lg text-white px-6 py-4"
                       >
-                        Name
+                        Department Name
                       </th>
-                      <th
+                      {/* <th
                         scope="col"
                         className="text-sm font-lg text-white px-6 py-4"
                       >
@@ -54,7 +54,7 @@ function HomeDepartment() {
                         className="text-sm font-lg text-white px-6 py-4"
                       >
                         Phone
-                      </th>
+                      </th> */}
                       <th
                         scope="col"
                         className="text-sm font-lg text-white px-6 py-4"
@@ -75,12 +75,12 @@ function HomeDepartment() {
                         <td className="text-xl text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
                           {data.name}
                         </td>
-                        <td className="text-xl text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                        {/* <td className="text-xl text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
                           {data.email}
                         </td>
                         <td className="text-xl text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
                           {data.phone}
-                        </td>
+                        </td> */}
                         <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
                           <Link
                             to={`department/user-department/${data.id}`}
