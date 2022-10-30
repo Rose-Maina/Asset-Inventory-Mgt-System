@@ -50,7 +50,7 @@ function AddDepartment() {
           type="submit"
           onClick={submitForm}
         >
-          ADD USER
+          ADD DEPARTMENT
         </button>
       </form>
     </div>
