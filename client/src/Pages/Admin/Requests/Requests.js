@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import AddAsset from "./AddAsset"
+// import Addrequests from "./Addrequests"
 
-const base_API = "/assets";
+const base_API = "/requests";
 
-function Assets() {
-  const [assets, setAssets] = useState([]);
+function Requests() {
+  const [requests, setRequests] = useState([]);
 
   //   const [empdata, empdatachange] = useState(null);
   const navigate = useNavigate();
 
-    const assetDetails = (id) => {
-  	  navigate("/assets/view/" + id);
-    }
-  const editAsset = (id) => {
-    navigate("/assets/edit/" + id);
+  //   const ShowDetail = (id) => {
+  // 	  navigate("/Requests/" + id);
+  //   }
+  const editrequests = (id) => {
+    navigate("/requests/edit/" + id);
   };
-  const deleteAsset = (id) => {
-    if (window.confirm("Do you want to delete the asset?")) {
-      fetch("assets/" + id, {
+  const deleterequests = (id) => {
+    if (window.confirm("Do you want to delete the request?")) {
+      fetch("requests/" + id, {
         method: "DELETE",
       })
         .then((res) => {
-          alert("Asset Removed successfully.");
+          alert("requests Removed successfully.");
           window.location.reload();
         })
         .catch((err) => {
@@ -34,7 +34,7 @@ function Assets() {
   useEffect(() => {
     fetch(base_API)
       .then((res) => res.json())
-      .then((assets) => setAssets(assets));
+      .then((requests) => setRequests(requests));
   }, []);
 
   return (
@@ -45,12 +45,12 @@ function Assets() {
             <div class="table-title">
               <div class="row">
                 <div class="col-sm-6">
-                  <h2>Assets</h2>
+                  <h2>Requests</h2>
                 </div>
                 <div class="col-sm-6">
-                  <Link to="/asset/create" className="btn btn-success">
+                  <Link to="/request/create" className="btn btn-success">
                     <i class="material-icons">&#xE147;</i>
-                    Add New Asset
+                    Add New Request
                   </Link>
                 </div>
               </div>
@@ -64,13 +64,17 @@ function Assets() {
                       <label for="selectAll"></label>
                     </span>
                   </th>
-                  <th>Name</th>
-                  <th>Category</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Quantity</th>
+                  <th>Urgency</th>
+                  <th>Request Type</th>
+                  <th>Status</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {assets.map((asset, index) => (
+                {requests.map((request, index) => (
                   <tr key={index}>
                     <td>
                       <span class="custom-checkbox">
@@ -83,25 +87,19 @@ function Assets() {
                         <label for="checkbox1"></label>
                       </span>
                     </td>
-                    <td>{asset.name}</td>
-                    <td>{asset.category.name}</td>
+                    <td>{request.tile}</td>
+                    <td>{request.description}</td>
+                    <td>{request.quantity}</td>
+                    <td>{request.urgency}</td>
+                    <td>{request.request_type}</td>
+                    <td></td>
                     <td>
-                    <a
-                        href="#viewAsset"
-                        class="view"
-                        data-toggle="modal"
-                        onClick={() => {
-                          assetDetails(asset.id);
-                        }}
-                      >
-                        <i class="material-icons">visibility</i>
-                      </a>
                       <a
-                        href="#editAsset"
+                        href="#editrequests"
                         class="edit"
                         data-toggle="modal"
                         onClick={() => {
-                          editAsset(asset.id);
+                          editrequests(requests.id);
                         }}
                       >
                         <i
@@ -113,14 +111,13 @@ function Assets() {
                         </i>
                       </a>
                       <a
-                        href="#deleteAsset"
+                        href="#deleterequests"
                         class="delete"
                         data-toggle="modal"
                         onClick={() => {
-                          deleteAsset(asset.id);
+                          deleterequests(requests.id);
                         }}
                       >
-                        {/* <span class="material-icons">visibility</span> */}
                         <i
                           class="material-icons"
                           data-toggle="tooltip"
@@ -141,4 +138,4 @@ function Assets() {
   );
 }
 
-export default Assets;
+export default Requests;
