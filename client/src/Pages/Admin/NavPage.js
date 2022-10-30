@@ -21,9 +21,9 @@ function NavPage() {
                 {/* <Route path="/" element={<Login/>}/> */}
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/users" element={<Users/>}/>
-                <Route path="/department/*" element={<Department/>}/>
-
-                <Route path="/category" element={<Category/>}/>
+                
+                <Route path="/department/*" element={<Department />} />
+                <Route path="/category/*" element={<Department/>}/>
                 <Route path="/assets" element={<Assets/>}/>
                 <Route path="/request" element={<Request/>}/>
                 <Route path="/profile" element={<Profile/>}/>

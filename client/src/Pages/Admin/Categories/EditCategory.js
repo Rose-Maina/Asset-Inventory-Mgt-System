@@ -29,11 +29,11 @@ function EditCategory() {
   function Update(e) {
     e.preventDefault();
     
-    axios.put(`http://localhost:3001/users/${id}`, data).then(navigate("/department"));
+    axios.put(`http://localhost:3001/users/${id}`, data).then(navigate("/category"));
   }
   return (
     <div className="w-screen h-full flex flex-col justify-center items-center mt-16">
-      <h2 className="text-2xl font-bold">Department Details</h2>
+      <h2 className="text-2xl font-bold">Category Details</h2>
       <form className="w-[50%] h-full flex flex-col mt-2">
         <input
           value={name}

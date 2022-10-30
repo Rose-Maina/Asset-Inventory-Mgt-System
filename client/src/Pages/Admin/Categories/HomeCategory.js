@@ -82,7 +82,8 @@ function HomeCategory() {
                         </td> */}
                         <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
                           <Link
-                            to={`department/user-department/${data.id}`}
+                            
+                            to={`category/user-category/${data.id}`}
                             className="bg-teal-600 text-white px-6 py-2 rounded-lg"
                           >
                             VIew
@@ -91,7 +92,7 @@ function HomeCategory() {
                             
                             
                             
-                            to={`department/edit-department/${data.id}`}
+                            to={`category/edit-category/${data.id}`}
                             className="bg-blue-600 text-white px-6 py-2 rounded-lg"
                           >
                             Edit

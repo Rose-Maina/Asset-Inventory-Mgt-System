@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import './Department.css'
 import HomeDepartment from './HomeDepartment'
+import './Department.css'
 import NavDepartment from './NavDepartment';
 import AddDepartment from './AddDepartment';
 import EditDepartment from './EditDepartment';
@@ -23,6 +23,7 @@ const Department = () => {
     </div>
   )
 }
+
 
 export default Department
 
