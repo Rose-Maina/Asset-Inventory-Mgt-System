@@ -6,12 +6,15 @@ class UsersController < ApplicationController
 
     def show
         user = User.find_by(id: params[:id])
+        return render json: {error: "User not found"} unless session.include? :user_id
         render json: user, status: :ok
     end
 
     def create
         user = User.create!(user_params)
         render json: user, status: :created
+    rescue ActiveRecord::RecordInvalid => e
+        render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
     end
 
     def update
@@ -31,6 +34,16 @@ class UsersController < ApplicationController
             head :no_content
         else 
             render json: {error: "user not found"}, status: :not_found
+        end
+    end
+
+    def login_user
+        user = User.find_by(username: params[:username])
+        if user&.authenticate(params[:password])
+            session[:user_id] ||= user.id
+            render json: user, status: :created
+        else 
+            render json: {error: "User does not exist"}, status: :unauthorized
         end
     end
     

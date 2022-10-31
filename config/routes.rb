@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post '/login', to: 'application#login'
   post '/logout', to: 'application#logout'
 
+  post '/login/admin', to: "clients#login_user"
+
+
 
   
 #   get '*path',
