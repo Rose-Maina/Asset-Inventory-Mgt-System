@@ -33,6 +33,7 @@ function EditDepartment() {
   }
   return (
     <div className="w-screen h-full flex flex-col justify-center items-center mt-16">
+      
       <h2 className="text-2xl font-bold">Department Details</h2>
       <form className="w-[50%] h-full flex flex-col mt-2">
         <input

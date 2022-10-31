@@ -3,14 +3,9 @@ import {Route, Routes} from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Users from "../Admin/Users/Users";
 import Department from "../Admin/Departments/Department";
-import Category from "../Admin/Categories/Category";
 import Assets from "../Admin/Assets/Assets";
 import Request from "../Admin/Requests/Requests";
-import Users from "./Users/Users";
-import Department from "./Departments/Department";
-import Category from "./Categories/Category"
-import Assets from "./Assets/Assets";
-import Request from "./Requests/Request"
+
 import Profile from "./Profile";
 import Logout from "./Logout";
 import AddAsset from "../Admin/Assets/AddAsset";

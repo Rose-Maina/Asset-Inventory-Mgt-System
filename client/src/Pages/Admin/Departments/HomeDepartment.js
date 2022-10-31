@@ -24,6 +24,7 @@ function HomeDepartment() {
     <>
       
       <div className="w-[80vw] h-full justify-center items-center flex flex-col px-10 py-8 mt-8">
+        
         <h1 className="text-3xl font-bold">Our Departments</h1>
         <div className="flex flex-col">
           <div className="overflow-x-auto mt-8 sm:-mx-6 items-center lg:-mx-8">

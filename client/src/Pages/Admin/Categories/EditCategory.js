@@ -5,16 +5,17 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function EditCategory() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [phone, setPhone] = useState("");
 
   const { id } = useParams();
 
   useEffect(() => {
     axios.get(`http://localhost:3001/users/${id}`).then((res) => {
       setName(res.data.name);
-      setEmail(res.data.email);
-      setPhone(res.data.phone);
+      // setEmail(res.data.email);
+      // setPhone(res.data.phone);
+    
     });
   }, []);
 
@@ -22,8 +23,8 @@ function EditCategory() {
 
   const data = {
     name: name,
-    email: email,
-    phone: phone,
+    // email: email,
+    // phone: phone,
   };
 
   function Update(e) {
