@@ -7,7 +7,7 @@ function HomeDepartment() {
   const [users, setUsers] = useState([]);
 
   function loadUsers() {
-    axios.get("http://localhost:3001/users").then((res) => {
+    axios.get("https://howling-web-14005.herokuapp.com/departments").then((res) => {
       setUsers(res.data.reverse());
     });
   }
@@ -17,7 +17,7 @@ function HomeDepartment() {
   }, []);
 
   function deleteUser(id) {
-    axios.delete(`http://localhost:3001/users/${id}`).then(loadUsers());
+    axios.delete(`https://howling-web-14005.herokuapp.com/departments/${id}`).then(loadUsers());
   }
 
   return (

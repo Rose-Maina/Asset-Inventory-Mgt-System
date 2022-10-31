@@ -11,7 +11,7 @@ function EditDepartment() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/users/${id}`).then((res) => {
+    axios.get(`https://howling-web-14005.herokuapp.com/departments/${id}`).then((res) => {
       setName(res.data.name);
       setEmail(res.data.email);
       setPhone(res.data.phone);
@@ -29,7 +29,7 @@ function EditDepartment() {
   function Update(e) {
     e.preventDefault();
     
-    axios.put(`http://localhost:3001/users/${id}`, data).then(navigate("/department"));
+    axios.put(`https://howling-web-14005.herokuapp.com/departments/${id}`, data).then(navigate("/department"));
   }
   return (
     <div className="w-screen h-full flex flex-col justify-center items-center mt-16">

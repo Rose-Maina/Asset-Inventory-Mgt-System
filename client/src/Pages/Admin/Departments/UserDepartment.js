@@ -9,7 +9,7 @@ function UserDepartment() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/users/${id}`).then((res) => {
+    axios.get(`https://howling-web-14005.herokuapp.com/departments/${id}`).then((res) => {
       setUser(res.data);
     });
   }, []);

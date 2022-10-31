@@ -18,7 +18,7 @@ function AddDepartment() {
     e.preventDefault();
     
     
-    axios.post("http://localhost:3001/users", data).then(navigate("/department"));
+    axios.post("https://howling-web-14005.herokuapp.com/departments", data).then(navigate("/department"));
   }
   return (
     <div className="w-screen h-full flex flex-col justify-center items-center mt-16">
