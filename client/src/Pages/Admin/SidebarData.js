@@ -40,7 +40,7 @@ export const SidebarData=[
       },
       {
         title: "Request",
-        path: "/request",
+        path: "/requests",
         icon: <MdIcons.MdRequestPage />,
       },
       {
