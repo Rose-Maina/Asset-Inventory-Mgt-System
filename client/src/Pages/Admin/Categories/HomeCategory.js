@@ -6,7 +6,7 @@ function HomeCategory() {
   const [users, setUsers] = useState([]);
 
   function loadUsers() {
-    axios.get("http://localhost:3001/users").then((res) => {
+    axios.get("http://127.0.0.1:3000/categories").then((res) => {
       setUsers(res.data.reverse());
     });
   }
@@ -16,7 +16,7 @@ function HomeCategory() {
   }, []);
 
   function deleteUser(id) {
-    axios.delete(`http://localhost:3001/users/${id}`).then(loadUsers());
+    axios.delete(`http://127.0.0.1:3000/categories/${id}`).then(loadUsers());
   }
 
   return (

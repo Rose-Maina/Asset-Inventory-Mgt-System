@@ -19,7 +19,7 @@ function AddCategory() {
     
     
     
-    axios.post("http://localhost:3001/users", data).then(navigate("/category"));
+    axios.post("/categories", data).then(navigate("/category"));
   }
   return (
     <div className="w-screen h-full flex flex-col justify-center items-center mt-16">

@@ -9,7 +9,7 @@ function UserCategory() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/users/${id}`).then((res) => {
+    axios.get(`http://127.0.0.1:3000/categories/${id}`).then((res) => {
       setUser(res.data);
     });
   }, []);
