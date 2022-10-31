@@ -22,27 +22,22 @@ const ViewAsset = () => {
   return (
     <div className="container py-5">
       <center>
-        <h3>Asset Details</h3>
-        <div className="row row-cols-1 row-cols-md-4 py-3">
-          {assetData && (
-            <div className="col mb-4">
-              <div className="card text-center h-100 shadow">
-                <img
-                  src={assetData.image}
-                  className="card-img-top"
-                  alt={assetData.name}
-                />
-                <div className="card-body ">
-                  <h5 className="card-title">{assetData.name}</h5>
-                  {/* <h5 className="card-title">{assetData.category.name}</h5> */}
-                </div>
-              </div>
-              <Link to="/assets" className="btn btn-default">
-                <h6>Back</h6>
-              </Link>
+        <h3 className="card-title py-3">Asset Details</h3>
+        {assetData && (
+          <div className="card w-50">
+            <div className="card-body">
+              <img
+                src={assetData.image}
+                className="card-img-top"
+                alt={assetData.name}
+              />
+              <h5 className="card-text">{assetData.name}</h5>
             </div>
-          )}
-        </div>
+          </div>
+        )}
+        <Link to="/assets" className="btn btn-default">
+          <h6>Back</h6>
+        </Link>
       </center>
     </div>
   );

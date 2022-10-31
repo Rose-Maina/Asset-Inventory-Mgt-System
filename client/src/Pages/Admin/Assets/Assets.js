@@ -59,10 +59,6 @@ function Assets() {
               <thead>
                 <tr>
                   <th>
-                    <span class="custom-checkbox">
-                      <input type="checkbox" id="selectAll" />
-                      <label for="selectAll"></label>
-                    </span>
                   </th>
                   <th>Name</th>
                   <th>Category</th>
@@ -73,62 +69,16 @@ function Assets() {
                 {assets.map((asset, index) => (
                   <tr key={index}>
                     <td>
-                      <span class="custom-checkbox">
-                        <input
-                          type="checkbox"
-                          id="checkbox1"
-                          name="options[]"
-                          value="1"
-                        />
-                        <label for="checkbox1"></label>
-                      </span>
                     </td>
                     <td>{asset.name}</td>
                     <td>{asset.category.name}</td>
                     <td>
-                    <a
-                        href="#viewAsset"
-                        class="view"
-                        data-toggle="modal"
-                        onClick={() => {
-                          assetDetails(asset.id);
-                        }}
-                      >
-                        <i class="material-icons">visibility</i>
-                      </a>
-                      <a
-                        href="#editAsset"
-                        class="edit"
-                        data-toggle="modal"
-                        onClick={() => {
-                          editAsset(asset.id);
-                        }}
-                      >
-                        <i
-                          class="material-icons"
-                          data-toggle="tooltip"
-                          title="Edit"
-                        >
-                          &#xE254;
-                        </i>
-                      </a>
-                      <a
-                        href="#deleteAsset"
-                        class="delete"
-                        data-toggle="modal"
-                        onClick={() => {
-                          deleteAsset(asset.id);
-                        }}
-                      >
-                        {/* <span class="material-icons">visibility</span> */}
-                        <i
-                          class="material-icons"
-                          data-toggle="tooltip"
-                          title="Delete"
-                        >
-                          &#xE872;
-                        </i>
-                      </a>
+                    <a href="#viewAsset" class="view" data-toggle="tooltip" onClick={() => {assetDetails(asset.id);}} >
+                    <i  class="material-icons" data-toggle="tooltip" title="View">&#xE945;</i></a>
+                    <a href="#editAsset" class="edit"data-toggle="modal" onClick={() => {editAsset(asset.id);}}>
+                        <i  class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a> 
+                    <a href="#deleteAsset" class="delete" data-toggle="modal" onClick={() => {deleteAsset(asset.id);}}>
+                        <i  class="material-icons" data-toggle="tooltip" title="Delete"> &#xE872;</i></a>
                     </td>
                   </tr>
                 ))}
@@ -142,3 +92,6 @@ function Assets() {
 }
 
 export default Assets;
+
+
+// &#xE885; - Star Icon

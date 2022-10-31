@@ -19,6 +19,7 @@ const EditAsset = () => {
     }, []);
 
     const [name, setName] = useState("");
+    const [image, setImage] = useState("");
     const [category_id, setCategory_Id] = useState("");
 
 
@@ -26,7 +27,7 @@ const EditAsset = () => {
 
     const handleEditSubmit=(e)=>{
       e.preventDefault();
-      const assetData={name,category_id};
+      const assetData={name, image, category_id};
       
 
       fetch("/assets/" + assetid,{
@@ -57,6 +58,10 @@ const EditAsset = () => {
                   <div className="form-group">
                     <label>Name</label>
                     <input type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" />
+                  </div>
+                  <div className="form-group">
+                    <label>Image Url</label>
+                    <input type="text" value={image} onChange={e=>setImage(e.target.value)} className="form-control" /> 
                   </div>
                   <div className="form-group">
                     <label>Category ID</label>

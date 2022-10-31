@@ -42,7 +42,7 @@ class AssetsController < ApplicationController
     end
 
     def edit_asset_params
-        params.permit(:name, :category_id)
+        params.permit(:name, :image, :category_id)
     end
 
 

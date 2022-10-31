@@ -9,6 +9,7 @@ const AddRequest = () => {
   const [quantity, setQuantity] = useState("");
   const [urgency, setUrgency] = useState("");
   const [request_type, setRequest_Type] = useState("");
+  const [status, setStatus] = useState("");
   const [asset_id, setAsset_Id] = useState("");
   const [user_id, setUser_Id] = useState("");
 
@@ -16,7 +17,7 @@ const AddRequest = () => {
 
   const handleAddSubmit = (e) => {
     e.preventDefault();
-    const requestData = { title, description, quantity, urgency, request_type, asset_id, user_id};
+    const requestData = { title, description, quantity, urgency, request_type, status, asset_id, user_id};
 
     fetch(base_API, {
       method: "POST",
@@ -86,12 +87,21 @@ const AddRequest = () => {
                 </div>
                 <div className="form-group">
                   <label>Type</label>
-                  <select className="form-control" name="request_type" value={urgency}
+                  <select className="form-control" name="request_type" value={request_type}
                     onChange={(e) => setRequest_Type(e.target.value)}required>
-                    <option value="new">New</option>
-                    <option value="repair" selected>
+                    <option value="new" selected>New</option>
+                    <option value="repair">
                       Repair
                     </option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label>Status</label>
+                  <select className="form-control" name="request_type" value={status}
+                    onChange={(e) => setStatus(e.target.value)} disabled>
+                    <option value="in progress" selected>In Progress</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option> 
                   </select>
                 </div>
                 <div className="form-group">
