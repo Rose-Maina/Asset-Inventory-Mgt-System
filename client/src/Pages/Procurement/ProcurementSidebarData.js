@@ -5,23 +5,36 @@ import * as AiIcons from "react-icons/ai";
 import * as CgIcons from "react-icons/cg";
 
 
-export const SideData=[
- 
+export const ProcurementSidebarData=[
       {
-        
         title: "Dashboard",
-        path: "/financedashboard",
+        path: "/dashboard",
         icon: <MdIcons.MdDashboard />,
       },
- 
-   
-   
+      
       {
-        title: "Request",
-        path: "/request",
-        icon: <MdIcons.MdRequestPage />,
+        title: "Category",
+        path: "/category",
+        icon: <MdIcons.MdCategory />,
       },
      
+      {
+        title: "Assets",
+        path: "/assetlist",
+        icon: <AiIcons.AiOutlineBars />,
+      },
+      {
+        title: "Request",
+        path: "/requestlist",
+        icon: <MdIcons.MdRequestPage />,
+      },
+      {
+        title: "Profile",
+        path: "/profile",
+        icon: <CgIcons.CgProfile />,
+        
+      },
+      
       {
         title: "Logout",
         path: "/logout",

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-const ViewAsset = () => {
+const ViewAssetList = () => {
 
   const { id } = useParams();
 
@@ -41,4 +41,4 @@ const ViewAsset = () => {
   );
 };
 
-export default ViewAsset;
+export default ViewAssetList;

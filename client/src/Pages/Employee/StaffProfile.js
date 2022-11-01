@@ -1,6 +1,6 @@
 import React from "react";
 
-function Profile() {
+function StaffProfile() {
   return (
     <>
        <center>
@@ -80,4 +80,5 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default StaffProfile;
+

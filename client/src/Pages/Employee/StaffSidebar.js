@@ -1,9 +1,9 @@
 import React from 'react';
-import {SidebarData} from '..Pages/Procurement/SidebarData';
+import {SidebarData} from '..Pages/Employee/SidebarData';
 import {NavLink} from 'react-router-dom';
 
 
-function Sidebar() {
+function StaffSidebar() {
     return (
         <>
             <div className="sidebar-list">
@@ -30,4 +30,4 @@ function Sidebar() {
     )
 }
 
-export default Sidebar;
+export default StaffSidebar;

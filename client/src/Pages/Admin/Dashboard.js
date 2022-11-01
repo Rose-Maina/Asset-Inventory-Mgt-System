@@ -1,4 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import * as FaIcons from "react-icons/fa";
+import * as FcIcons from "react-icons/fc";
+import * as MdIcons from "react-icons/md";
+import * as AiIcons from "react-icons/ai";
+import * as CgIcons from "react-icons/cg";
 
 function Dashboard() {
     return (
@@ -6,14 +12,15 @@ function Dashboard() {
             <div className="container py-5"> 
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     <div className="col">
-                        <div className="card h-100" style={{backgroundColor:"#07d2ff"}}>
-                            {/* <img src="..." className="card-img-top" alt="..." /> */}
-                            <div className="card-body">
+                    {/* <Link to="../Admin/Users/Users.js" style={{width: 200}}><FaIcons.FaUsers />
+                            </Link> */}
+                        {/* <Link to={"../Admin/Users/Users.js"}>Users</Link> */}
+                            {/* <div className="card-body">
                                 <h5 className="card-title">0</h5>
                                 <p className="card-text">Total Employees</p>
-                            </div>
+                            </div> */}
                             <a href="#" className="small-box-footer" style={{textDecoration: 'none', color:'white'}}>More info <i className="bi bi-arrow-right-circle-fill" /></a>
-                        </div>
+                        {/* </div> */}
                     </div>
                     <div className="col">
                         <div className="card h-100" style={{backgroundColor:"#18bd28"}}>

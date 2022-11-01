@@ -3,25 +3,25 @@ import * as AiIcons from "react-icons/ai";
 import * as CgIcons from "react-icons/cg";
 
 
-export const SidebarData=[
+export const StaffSidebarData=[
       {
-        title: "Dashboard",
-        path: "/dashboard",
+        title: "Staff Dashboard",
+        path: "/staffdashboard",
         icon: <MdIcons.MdDashboard />,
       },
      
       {
-        title: "User Assets",
+        title: "Staff Assets",
         path: "/assets",
         icon: <AiIcons.AiOutlineBars />,
       },
       {
-        title: "User Request",
-        path: "/request",
+        title: "Staff Request",
+        path: "/requests",
         icon: <MdIcons.MdRequestPage />,
       },
       {
-        title: "Profile",
+        title: "StaffProfile",
         path: "/profile",
         icon: <CgIcons.CgProfile />,
         

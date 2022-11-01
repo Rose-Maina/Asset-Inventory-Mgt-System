@@ -1,33 +1,74 @@
-import { Route, Routes } from 'react-router-dom';
-import HomeDepartment from './HomeDepartment'
-import './Department.css'
-import NavDepartment from './NavDepartment';
-import AddDepartment from './AddDepartment';
-import EditDepartment from './EditDepartment';
-import UserDepartment from './UserDepartment';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const Department = () => {
+function Department() {
+  const [departments, setDepartments] = useState([]);
+
+  function loadDepartments() {
+    axios.get("/departments").then((res) => {
+      setDepartments(res.data.reverse());
+    });
+  }
+
+  useEffect(() => {
+    loadDepartments();
+  }, []);
+
+  function deleteDepartment(id) {
+    axios.delete(`/departments/${id}`).then(loadDepartments());
+  }
+
   return (
+    <>
 
-    <div className="App">
-      <NavDepartment/>
-      <Routes>
-        <Route  path="/" exact element={<HomeDepartment/>} />
-        <Route  path="department/home-department" exact element={<HomeDepartment/>} />
-        <Route  path="department/user-department/:id" exact element={<UserDepartment/>} />
-        
-        <Route  path="department/add-department" exact element={<AddDepartment/>} />
-        
-        <Route  path="department/edit-department/:id" exact element={<EditDepartment/>} />
-      </Routes>
-    </div>
-  )
+
+<div class="container-xl">
+        <div class="table-responsive">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h2><strong>Departments</strong></h2>
+                </div>
+                <div class="col-sm-6">
+                  <Link to="/department/create" className="btn btn-success">
+                    <i class="material-icons">&#xE147;</i>
+                    Add New Department
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>
+                  </th>
+                  <th>Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+              {departments.map((department, index) => (
+                  <tr key={index}>
+                    <td>
+                    {index + 1}
+                    </td>
+                    <td>{department.name}</td>
+                    <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
+                    <Link to={`/department/edit/${department.id}`} className="btn btn-warning">Edit</Link>
+                    <Link onClick={()=>deleteDepartment(department.id)} to={"#"} className="btn btn-danger">Delete</Link>
+                    </td>
+                  </tr>
+                ))} 
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-
-export default Department
-
-
-
-
-
+export default Department;

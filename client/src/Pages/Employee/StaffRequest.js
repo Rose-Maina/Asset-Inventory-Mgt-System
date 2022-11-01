@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function RequestList() {
+function StaffRequests() {
   const [requests, setRequests] = useState([]);
 
   function loadRequests() {
@@ -31,12 +31,12 @@ function RequestList() {
                 <div class="col-sm-6">
                   <h2><strong>Requests</strong></h2>
                 </div>
-                {/* <div class="col-sm-6">
+                <div class="col-sm-6">
                   <Link to="/request/create" className="btn btn-success">
                     <i class="material-icons">&#xE147;</i>
                     Add New Request
                   </Link>
-                </div> */}
+                </div>
               </div>
             </div>
             
@@ -69,7 +69,7 @@ function RequestList() {
                     <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
                     <Link to={`/request/view/${request.id}`} className="btn btn-primary">View</Link>
                     <Link to={`/request/edit/${request.id}`} className="btn btn-warning">Edit</Link>
-                    <Link onClick={()=>deleteRequest(request.id)} to={"#"} className="btn btn-danger">Delete</Link>
+                    {/* <Link onClick={()=>deleteRequest(request.id)} to={"#"} className="btn btn-danger">Delete</Link> */}
                     </td>
                   </tr>
                 ))} 
@@ -82,7 +82,7 @@ function RequestList() {
   );
 }
 
-export default RequestList;
+export default StaffRequests;
 
 
 

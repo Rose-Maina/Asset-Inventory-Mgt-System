@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function AddAsset() {
+function AddAssetList() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [category_id, setCategory_Id] = useState("");
@@ -58,4 +58,4 @@ function AddAsset() {
   );
 }
 
-export default AddAsset;
+export default AddAssetList;

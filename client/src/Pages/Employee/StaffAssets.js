@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Assets() {
+function StaffAssets() {
   const [assets, setAssets] = useState([]);
 
   function loadAssets() {
@@ -29,13 +29,7 @@ function Assets() {
             <div class="table-title">
               <div class="row">
                 <div class="col-sm-6">
-                  <h2><strong>Assets</strong></h2>
-                </div>
-                <div class="col-sm-6">
-                  <Link to="/asset/create" className="btn btn-success">
-                    <i class="material-icons">&#xE147;</i>
-                    Add New Asset
-                  </Link>
+                  <h2><strong> My Assets</strong></h2>
                 </div>
               </div>
             </div>
@@ -58,8 +52,8 @@ function Assets() {
                     <td>{asset.name}</td>
                     <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
                     <Link to={`/asset/view/${asset.id}`} className="btn btn-primary">View</Link>
-                    <Link to={`/asset/edit/${asset.id}`} className="btn btn-warning">Edit</Link>
-                    <Link onClick={()=>deleteAsset(asset.id)} to={"#"} className="btn btn-danger">Delete</Link>
+                    {/* <Link to={`/asset/edit/${asset.id}`} className="btn btn-warning">Edit</Link>
+                    <Link onClick={()=>deleteAsset(asset.id)} to={"#"} className="btn btn-danger">Delete</Link> */}
                     </td>
                   </tr>
                 ))} 
@@ -72,4 +66,4 @@ function Assets() {
   );
 }
 
-export default Assets;
+export default StaffAssets;

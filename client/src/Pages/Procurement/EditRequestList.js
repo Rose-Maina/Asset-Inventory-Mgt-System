@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-function EditRequest() {
+function EditRequestList() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -106,6 +106,6 @@ function EditRequest() {
   );
 }
 
-export default EditRequest;
+export default EditRequestList;
 
 

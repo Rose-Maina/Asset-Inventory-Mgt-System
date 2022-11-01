@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Category() {
+function CategoryList() {
   const [categories, setCategories] = useState([]);
 
   function loadCategories() {
@@ -72,4 +72,4 @@ function Category() {
   );
 }
 
-export default Category;
+export default CategoryList;

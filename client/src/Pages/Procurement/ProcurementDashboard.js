@@ -1,6 +1,6 @@
 import React from "react";
 
-function Dashboard() {
+function ProcurementDashboard() {
     return (
         <>
             <div className="container py-5"> 
@@ -61,4 +61,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard;
+export default ProcurementDashboard;

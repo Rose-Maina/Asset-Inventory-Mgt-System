@@ -1,6 +1,6 @@
 import React from "react";
 
-function Profile() {
+function ProcurementProfile() {
   return (
     <>
        <center>
@@ -12,7 +12,7 @@ function Profile() {
           <h5 className="card-text">Username</h5>
           <h6 className="card-text">Email</h6>
           <h6 className="card-text">Department</h6>
-          <h6 className="card-text">Type</h6>
+          <h6 className="card-text">Role</h6>
 
           <a
             href="#editEmployeeModal"
@@ -80,5 +80,4 @@ function Profile() {
   );
 }
 
-export default Profile;
-
+export default ProcurementProfile;

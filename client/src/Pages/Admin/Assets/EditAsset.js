@@ -1,79 +1,52 @@
-import { useEffect, useState } from "react";
+
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const EditAsset = () => {
-    const { assetid } = useParams();
-    // const base_API = "/assets";
+function EditAsset() {
+  const [name, setName] = useState("");
 
-   
+  const { id } = useParams();
 
-    useEffect(() => {
-        fetch("/assets/" + assetid).then((res) => {
-            return res.json();
-        }).then((resp) => {
-            setName(resp.name);
-            setCategory_Id(resp.category.id);
-        }).catch((err) => {
-            console.log(err.message);
-        })
-    }, []);
+  useEffect(() => {
+    axios.get(`/assets/${id}`).then((res) => {
+      setName(res.data.name);
+    });
+  }, []);
 
-    const [name, setName] = useState("");
-    const [image, setImage] = useState("");
-    const [category_id, setCategory_Id] = useState("");
+  const navigate = useNavigate();
 
+  const data = {
+    name: name,
+  };
 
-    const navigate=useNavigate();
-
-    const handleEditSubmit=(e)=>{
-      e.preventDefault();
-      const assetData={name, image, category_id};
-      
-
-      fetch("/assets/" + assetid,{
-        method:"PUT",
-        headers:{"content-type":"application/json"},
-        body:JSON.stringify(assetData)
-      }).then((res)=>{
-        if (res.ok){
-        alert('Asset Updated successfully.')}
-        navigate('/assets');
-      }).catch((err)=>{
-        console.log(err.message)
-      })
-
-    }
-
+  function updateAsset(e) {
+    e.preventDefault();
+    
+    axios.put(`/assets/${id}`, data).then(navigate("/assets"));
+  }
   return (
     <div className="container py-5">
       <center>
         <div>
           <div style={{ maxWidth: 400 }}>
             <div>
-              <form onSubmit={handleEditSubmit}>
+              <form onSubmit={updateAsset}>
                 <div>
-                  <h4 className="modal-title">Edit Asset</h4> 
+                <h3 className="py-4"><strong>Update Asset</strong></h3> 
                 </div>
                 <div>
                   <div className="form-group">
                     <label>Name</label>
-                    <input type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" />
-                  </div>
-                  <div className="form-group">
-                    <label>Image Url</label>
-                    <input type="text" value={image} onChange={e=>setImage(e.target.value)} className="form-control" /> 
-                  </div>
-                  <div className="form-group">
-                    <label>Category ID</label>
-                    <input type="text" value={category_id} onChange={e=>setCategory_Id(e.target.value)} className="form-control" disabled /> 
+                    <input type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" required />
                   </div>
                 </div>
                 <div>
-                  <Link to="/assets" className="btn btn-default">
+                  <Link to="/category" className="btn btn-default">
                     Cancel
                   </Link>
-                  <button type="submit" className="btn btn-success" value="Update">
-                    Update 
+                  <button type="submit" className="btn btn-success" value="Add">
+                    Update Asset
                   </button>
                 </div>
               </form>
@@ -83,6 +56,8 @@ const EditAsset = () => {
       </center>
     </div>
   );
-};
+}
 
 export default EditAsset;
+
+

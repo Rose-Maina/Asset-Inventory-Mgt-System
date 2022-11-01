@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import MainPage from './Pages/Admin/MainPage';
+// import MainPage from './Pages/Admin/MainPage';
+import StaffMainPage from './Pages/Employee/StaffMainPage';
 
 function App() {
   return (
     <>
       <Router>
-        
-          <MainPage />
+
+          <StaffMainPage />
+          {/* <MainPage /> */}
           
       
       </Router> 

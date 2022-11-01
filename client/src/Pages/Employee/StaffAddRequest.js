@@ -1,31 +1,17 @@
-
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-function EditRequest() {
+function StaffAddRequest() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("");
   const [urgency, setUrgency] = useState("");
   const [request_type, setRequest_Type] = useState("");
   const [status, setStatus] = useState("");
-
-  const { id } = useParams();
-
-  useEffect(() => {
-    axios.get(`/requests/${id}`).then((res) => {
-      setTitle(res.data.title);
-      setDescription(res.data.description);
-      setQuantity(res.data.quantity);
-      setUrgency(res.data.urgency);
-      setRequest_Type(res.data.request_type);
-      setStatus(res.data.status);
-    });
-  }, []);
+  
 
   const navigate = useNavigate();
-
   const data = {
     title: title,
     description: description,
@@ -35,10 +21,10 @@ function EditRequest() {
     status: status,
   };
 
-  function updateRequest(e) {
+  function submitForm(e) {
     e.preventDefault();
     
-    axios.put(`/requests/${id}`, data).then(navigate("/requests"));
+    axios.post("/requests", data).then(navigate("/requests"));
   }
   return (
     <div className="container py-5">
@@ -46,9 +32,9 @@ function EditRequest() {
         <div>
           <div style={{ maxWidth: 400 }}>
             <div>
-              <form onSubmit={updateRequest}>
+              <form onSubmit={submitForm}>
                 <div>
-                <h3 className="py-4"><strong>Update Request</strong></h3> 
+                <h3 className="py-4"><strong>Add New Request</strong></h3> 
                 </div>
                   <div className="form-group">
                     <label>Title</label>
@@ -82,7 +68,7 @@ function EditRequest() {
                   <div className="form-group">
                     <label>Status</label>
                     <select className="form-control" name="status" value={status}
-                    onChange={(e) => setStatus(e.target.value)} required>
+                    onChange={(e) => setStatus(e.target.value)} disabled>
                     <option value="in progress" selected>In Progress</option>
                     <option value="approved">Approved</option>
                     <option value="rejected">Rejected</option>
@@ -94,7 +80,7 @@ function EditRequest() {
                     Cancel
                   </Link>
                   <button type="submit" className="btn btn-success" value="Add">
-                    Update Request
+                    Add Request
                   </button>
                 </div>
               </form>
@@ -106,6 +92,4 @@ function EditRequest() {
   );
 }
 
-export default EditRequest;
-
-
+export default StaffAddRequest;
