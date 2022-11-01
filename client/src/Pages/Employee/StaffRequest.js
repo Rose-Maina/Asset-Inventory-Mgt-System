@@ -15,9 +15,9 @@ function StaffRequests() {
     loadRequests();
   }, []);
 
-  function deleteRequest(id) {
-    axios.delete(`/requests/${id}`).then(loadRequests());
-  }
+  // function deleteRequest(id) {
+  //   axios.delete(`/requests/${id}`).then(loadRequests());
+  // }
 
   return (
     <>

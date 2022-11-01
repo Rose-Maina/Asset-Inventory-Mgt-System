@@ -1,7 +1,7 @@
 import React from 'react';
-import ProcurementNavbar from '..Pages/Procurement/ProcurementNavbar';
-import ProcurementNavPage from '../Pages/Procurement/ProcurementNavPage';
-import ProcurementSidebar from '../Pages/Procurement/ProcurementSidebar';
+import ProcurementNavbar from './ProcurementNavbar';
+import ProcurementNavPage from './ProcurementNavPage';
+import ProcurementSidebar from './ProcurementSidebar';
 
 function ProcurementMainPage() {
   return (

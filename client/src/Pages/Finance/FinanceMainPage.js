@@ -1,28 +1,28 @@
 import React from 'react';
-import StaffNavbar from './StaffNavbar';
-import StaffNavPage from './StaffNavPage';
-import StaffSidebar from './StaffMainPage';
+import FinanceNavbar from './FinanceNavbar';
+import FinanceNavPage from './FinanceNavPage';
+import FinanceSidebar from './FinanceSidebar';
 
-function StaffMainPage() {
+function FinanceMainPage() {
   return (
     <>
       {/* navbar section */}
       <div>
-        <StaffNavbar/>
+        <FinanceNavbar/>
       </div>
 
       {/* sidebar section */}
       <div className='sidebar-container'>
         <div className='side-bar'>
-          <StaffSidebar/>
+          <FinanceSidebar/>
         </div>
 
         <div className='nav-page'>
-          <StaffNavPage/>
+          <FinanceNavPage/>
         </div>
       </div>
     </>
   )
 }
 
-export default StaffMainPage;
+export default FinanceMainPage;

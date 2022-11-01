@@ -5,7 +5,7 @@ import * as CgIcons from "react-icons/cg";
 
 export const StaffSidebarData=[
       {
-        title: "Staff Dashboard",
+        title: "StaffDashboard",
         path: "/staffdashboard",
         icon: <MdIcons.MdDashboard />,
       },

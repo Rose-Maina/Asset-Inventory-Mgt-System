@@ -1,7 +1,7 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
 import ProcurementDashboard from "../Pages/Procurement/ProcurementDashboard";
-import Category from "../Pages/Procurement/CategoryList";
+import CategoryList from "../Pages/Procurement/CategoryList";
 import AssetList from "../Pages/Procurement/AssetList";
 import RequestList from "../Pages/Procurement/RequestList";
 import ProcurementProfile from "../Pages/Procurement/ProcurementProfile";
@@ -15,7 +15,7 @@ function ProcurementNavPage() {
     return (
         <>
             <Routes>
-                <Route path="/dashboard" element={<ProcurementDashboard/>}/>
+                <Route path="/procurementdashboard" element={<ProcurementDashboard/>}/>
                 <Route path="/category" element={<CategoryList/>}/>
                 <Route path="/assets" element={<AssetList/>}/>
                 <Route path="/asset/edit/:id" element={<EditAssetList/>}/>
