@@ -56,8 +56,8 @@ function Department() {
                     {index + 1}
                     </td>
                     <td>{department.name}</td>
-                    <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
-                    <Link to={`/department/edit/${department.id}`} className="btn btn-warning">Edit</Link>
+                    <td className="" style={{display: 'flex'}}>
+                    <Link style={{marginRight: 5}} to={`/department/edit/${department.id}`} className="btn btn-warning">Edit</Link>
                     <Link onClick={()=>deleteDepartment(department.id)} to={"#"} className="btn btn-danger">Delete</Link>
                     </td>
                   </tr>

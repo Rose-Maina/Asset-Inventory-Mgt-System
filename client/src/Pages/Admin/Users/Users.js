@@ -60,9 +60,10 @@ function Users() {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>{user.user_type}</td>
-                    <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
-                    <Link to={`/user/view/${user.id}`} className="btn btn-primary">View</Link>
-                    <Link to={`/user/edit/${user.id}`} className="btn btn-warning">Edit</Link>
+                    {/* style={{display: 'inline'}} */}
+                    <td className="" style={{display: 'flex'}}>
+                    <Link style={{marginRight: 5}} to={`/user/view/${user.id}`} className="btn btn-primary">View</Link>
+                    <Link style={{marginRight: 5}} to={`/user/edit/${user.id}`} className="btn btn-warning">Edit</Link>
                     <Link onClick={()=>deleteUser(user.id)} to={"#"} className="btn btn-danger">Delete</Link>
                     </td>
                   </tr>
@@ -78,12 +79,5 @@ function Users() {
 
 export default Users;
 
-{/* <th>Title</th>
-<th>Description</th>
-<th>Quantity</th>
-<th>Urgency</th>
-<th>Request Type</th>
-<th>Status</th>
-<th>Actions</th> */}
 
                 

@@ -56,9 +56,9 @@ function AssetList() {
                     {index + 1}
                     </td>
                     <td>{asset.name}</td>
-                    <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
-                    <Link to={`/asset/view/${asset.id}`} className="btn btn-primary">View</Link>
-                    <Link to={`/asset/edit/${asset.id}`} className="btn btn-warning">Edit</Link>
+                    <td className="" style={{display: 'flex'}}>
+                    <Link style={{marginRight: 5}} to={`/asset/view/${asset.id}`} className="btn btn-primary">View</Link>
+                    <Link style={{marginRight: 5}}to={`/asset/edit/${asset.id}`} className="btn btn-warning">Edit</Link>
                     <Link onClick={()=>deleteAsset(asset.id)} to={"#"} className="btn btn-danger">Delete</Link>
                     </td>
                   </tr>

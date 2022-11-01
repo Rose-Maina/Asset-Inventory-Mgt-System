@@ -56,9 +56,8 @@ function Category() {
                     {index + 1}
                     </td>
                     <td>{category.name}</td>
-                    <td className="text-sm flex justify-between items-center text-white-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
-                    {/* <Link to={`/category/view/${category.id}`} className="bg-teal-600 text-white px-6 py-2 rounded-lg">View</Link> */}
-                    <Link to={`/category/edit/${category.id}`} className="btn btn-warning">Edit</Link>
+                    <td className="" style={{display: 'flex'}}>
+                    <Link style={{marginRight: 5}}to={`/category/edit/${category.id}`} className="btn btn-warning">Edit</Link>
                     <Link onClick={()=>deleteCategory(category.id)} to={"#"} className="btn btn-danger">Delete</Link>
                     </td>
                   </tr>

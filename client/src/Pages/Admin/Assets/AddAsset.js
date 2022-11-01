@@ -19,6 +19,8 @@ function AddAsset() {
     
     axios.post("/assets", data).then(navigate("/assets"));
   }
+
+  
   return (
     <div className="container py-5">
       <center>

@@ -21,6 +21,7 @@ import ViewUser from "../Admin/Users/ViewUser";
 import ViewRequest from "../Admin/Requests/ViewRequest";
 import AddRequest from "../Admin/Requests/AddRequest";
 import EditRequest from "../Admin/Requests/EditRequest";
+import Login from "../../Components/Login";
 
 
 
@@ -29,7 +30,7 @@ function NavPage() {
     return (
         <>
             <Routes>
-                {/* <Route path="/" element={<Login/>}/> */}
+                <Route path="/" element={<Login/>}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/users" element={<Users/>}/>
                 <Route path="/Admin/Users/Users.js" element={<Users/>}/> 

@@ -1,81 +1,59 @@
-import React from 'react';
-// import {
-//   MDBBtn,
-//   MDBContainer,
-//   MDBRow,
-//   MDBCol,
-//   MDBCard,
-//   MDBCardBody,
-//   MDBInput,
-//   MDBIcon
-// }
-// from 'mdb-react-ui-kit';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+// import bg1 from "./bg1.jpg";
+
+
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const data = {
+    email: email,
+    password: password,
+  };
+
+  function submitLoginForm(e) {
+    e.preventDefault();
+    
+    axios.post("/login", data)
+    
+    .then(navigate("/dashboard"));
+  }
+
+  // style={{ backgroundImage: `url(${bg1})` }}
+
   return (
-    <div>
+    <div className="container py-5">
       <center>
-      <form onSubmit={handleSubmit}>
-        <h3>Login</h3>
-        <div className="mb-3">
-          <input
-            type="text" 
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            name="username"
-            className="form-control"
-            placeholder="Enter username"
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <input
-            type="password" value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            name="password"
-            className="form-control"
-            placeholder="Enter password"
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <div className="custom-control custom-checkbox">
+        <div className="py-5">
+          <div style={{ maxWidth: 500 }}>
+            <div className="py-5">
+              <form onSubmit={submitLoginForm}>
+                <div className="py-5">
+                <h3 className="py-4"><strong>Sign In</strong></h3> 
+                </div>
+                  <div className="form-group">
+                    <label><strong>Email</strong></label>
+                    <input type="email" value={email} onChange={e=>setEmail(e.target.value)} className="form-control" required />
+                  </div>
+                  <div className="form-group">
+                    <label><strong>Password</strong></label>
+                    <input  type="password" value={password} onChange={e=>setPassword(e.target.value)} className="form-control" required />
+                  </div>
+                <div className="py-5">
+                  <button type="submit" className="btn btn-success" value="Add">
+                    LOGIN
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            LOGIN
-          </button>
-          </div>
-      </form>
       </center>
     </div>
-    // <MDBContainer fluid>
-
-    //   <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-    //     <MDBCol col='12'>
-
-    //       <MDBCard className='bg-dark text-white my-5 mx-auto' style={{borderRadius: '1rem', maxWidth: '400px'}}>
-    //         <MDBCardBody className='p-5 d-flex flex-column align-items-center mx-auto w-100'>
-
-    //           <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-    //           <p className="text-white-50 mb-5">Please enter your login and password!</p>
-
-    //           <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-white' label='Email address' id='formControlLg' type='email' size="lg"/>
-    //           <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-white' label='Password' id='formControlLg' type='password' size="lg"/>
-
-    //           <p className="small mb-3 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-    //           <MDBBtn outline className='mx-2 px-5' color='white' size='lg'>
-    //             Login
-    //           </MDBBtn>
-
-    //         </MDBCardBody>
-    //       </MDBCard>
-
-    //     </MDBCol>
-    //   </MDBRow>
-
-    // </MDBContainer>
   );
 }
 

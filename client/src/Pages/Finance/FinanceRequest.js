@@ -60,7 +60,7 @@ function FinanceRequest() {
                     <td>{request.urgency}</td>
                     <td>{request.request_type}</td>
                     <td>{request.status}</td>
-                    <td className="text-sm flex justify-between  items-center text-gray-900 font-bold px-6 py-4 space-x-4 whitespace-nowrap">
+                    <td className="" style={{display: 'flex'}}>
                     <Link to={`/request/view/${request.id}`} className="btn btn-primary">View</Link>
                     {/* <Link to={`/request/edit/${request.id}`} className="btn btn-warning">Edit</Link>
                     <Link onClick={()=>deleteRequest(request.id)} to={"#"} className="btn btn-danger">Delete</Link> */}
