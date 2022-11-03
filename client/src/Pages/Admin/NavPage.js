@@ -30,7 +30,7 @@ function NavPage() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Login/>}/>
+                {/* <Route path="/" element={<Login/>}/> */}
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/users" element={<Users/>}/>
                 <Route path="/Admin/Users/Users.js" element={<Users/>}/> 

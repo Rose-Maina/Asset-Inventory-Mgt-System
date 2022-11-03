@@ -54,14 +54,22 @@ function AddUser() {
                     <label>Role</label>
                     <select className="form-control" name="request_type" value={user_type}
                     onChange={(e) => setUser_Type(e.target.value)}required>
-                    <option value="staff" selected>Staff</option>
+                    <option value="regular" selected>Staff</option>
                     <option value="manager">Manager</option>
                     <option value="admin">Admin</option>
+                    <option value="finance">Finance</option>
                   </select>
                   </div>
                   <div className="form-group">
-                    <label>Department ID</label>
-                    <input type="text" value={department_id} onChange={e=>setDepartment_Id(e.target.value)} className="form-control" required />
+                    <label>Department</label>
+                    <select className="form-control" name="request_type" value={department_id}
+                    onChange={(e) => setDepartment_Id(e.target.value)}required>
+                    <option value="1" selected>Admin</option>
+                    <option value="2">Procurement</option>
+                    <option value="3">Finance</option>
+                    <option value="4">Accounts</option>
+                    <option value="5">Human Resources</option>
+                  </select>
                   </div>
                   <div className="form-group">
                     <label>Password</label>
@@ -76,7 +84,7 @@ function AddUser() {
                     Cancel
                   </Link>
                   <button type="submit" className="btn btn-success" value="Add">
-                    Add Employee
+                    Add New Employee
                   </button>
                 </div>
               </form>

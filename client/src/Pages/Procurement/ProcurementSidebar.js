@@ -1,5 +1,5 @@
 import React from 'react';
-import {SidebarData} from '..Pages/Procurement/SidebarData';
+import {ProcurementSidebarData} from './ProcurementSidebarData';
 import {NavLink} from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ function ProcurementSidebar() {
         <>
             <div className="sidebar-list">
             
-                {SidebarData.map((val, key)=>{
+                {ProcurementSidebarData.map((val, key)=>{
                         return(
                             <div key={key}>
                                 <NavLink to={val.path}

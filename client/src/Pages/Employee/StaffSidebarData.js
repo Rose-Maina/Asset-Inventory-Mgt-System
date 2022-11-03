@@ -32,4 +32,5 @@ export const StaffSidebarData=[
         icon: <MdIcons. MdLogout />,
        
       },
+
 ]

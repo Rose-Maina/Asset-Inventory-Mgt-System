@@ -40,8 +40,13 @@ function AddAsset() {
                     <input type="text" value={image} onChange={e=>setImage(e.target.value)} className="form-control" required />
                   </div>
                   <div className="form-group">
-                    <label>Category ID</label>
-                    <input type="text" value={category_id} onChange={e=>setCategory_Id(e.target.value)} className="form-control" required />
+                    <label>Category</label>
+                    <select className="form-control" name="request_type" value={category_id}
+                    onChange={(e) => setCategory_Id(e.target.value)}required>
+                    <option value="1" selected>Electronics</option>
+                    <option value="2">Stationery</option>
+                    <option value="3">Furniture</option>
+                  </select>
                   </div>
                 <div>
                   <Link to="/assets" className="btn btn-default">

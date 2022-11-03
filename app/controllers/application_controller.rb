@@ -4,8 +4,8 @@ class ApplicationController < ActionController::API
     def home
       if check_authentication_cookies
           render json: {
-              message: 'Welcome home'
-          }
+              message: 'Welcome Home'
+          }, status: 200
       else
           unauthenticated
       end    
@@ -51,12 +51,14 @@ class ApplicationController < ActionController::API
     #admin can view, delete, edit, update all requests, users, assets
 
   def app_login (email: nil, password: nil)
-      if email == "mail@mail.com" && password =="nil"
+      if email == "mail@mail.com" && password =="mail123"
         :regular
-      elsif email == "admin@admin.com" && password == "admin123"
+      elsif email == "admin@mail.com" && password == "admin123"
         :admin
-      elsif  email == "mail@manager.com" && password == "nil"
+      elsif  email == "manager@mail.com" && password == "manager123"
         :manager
+      elsif  email == "finance@mail.com" && password == "finance123"
+        :finance
       else 
         nil
     end
@@ -101,9 +103,20 @@ class ApplicationController < ActionController::API
   end
 
   # check manager access
-  # def check_manager_access_session
-  #   session[:type] == 'manager'
-  # end
+  def check_manager_access_session
+    session[:type] == 'manager'
+  end
+
+  # check finance access
+  def check_manager_access_session
+    session[:type] == 'finance'
+  end
+
+  # check regular access
+  def check_manager_access_session
+    session[:type] == 'regular'
+  end
+
 
   # unauthenticated
   def unauthenticated

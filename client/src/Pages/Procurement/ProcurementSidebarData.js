@@ -1,4 +1,6 @@
 import * as FaIcons from "react-icons/fa";
+// import * as FaIcons from "react-icons/fa";
+// import * as FcIcons from "react-icons/fc";
 import * as FcIcons from "react-icons/fc";
 import * as MdIcons from "react-icons/md";
 import * as AiIcons from "react-icons/ai";
@@ -8,10 +10,21 @@ import * as CgIcons from "react-icons/cg";
 export const ProcurementSidebarData=[
       {
         title: "Dashboard",
-        path: "/dashboard",
+        path: "/procurementdashboard",
         icon: <MdIcons.MdDashboard />,
       },
-      
+
+      {
+        title: "Users",
+        path: "/userslist",
+        icon: <FaIcons.FaUsers />,
+      },
+      {
+        title: "Department",
+        path: "/departmentlist",
+        icon: <FcIcons.FcDepartment />,
+      },
+
       {
         title: "Category",
         path: "/category",
@@ -20,17 +33,17 @@ export const ProcurementSidebarData=[
      
       {
         title: "Assets",
-        path: "/assetlist",
+        path: "/assets",
         icon: <AiIcons.AiOutlineBars />,
       },
       {
         title: "Request",
-        path: "/requestlist",
+        path: "/requests",
         icon: <MdIcons.MdRequestPage />,
       },
       {
         title: "Profile",
-        path: "/profile",
+        path: "/procurementprofile",
         icon: <CgIcons.CgProfile />,
         
       },
