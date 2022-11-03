@@ -11,15 +11,17 @@ puts "Seeding data..."
         { name: "Stationery" }
         ])
     departments = Department.create([
+        { name: "Admin" },
         { name: "Procurement" },
-        { name: "Admin" }
+        { name: "Finance" },
+        { name: "Accounts" }
     ])
     assets = Asset.create([
         { name: "Laptop", image: "https://www.saruk.co.ke/images/43881665404534.jpg", category_id: 1 },
         { name: "Notebooks", image: "https://i.pinimg.com/736x/59/04/ed/5904ed97ba645be20ab1dc2570e5b3d4.jpg", category_id: 2}
     ])
     users = User.create([
-        { name: "Bruce Wells", email: "admin@admin.com", password: "admin123", password_confirmation: "admin123", contact: '0743678901', user_type: 'Admin', department_id: 2  },
+        { name: "Bruce Wells", email: "admin@mail.com", contact: '0743678901', user_type: 'Admin', department_id: 1, password: "admin123", password_confirmation: "admin123" },
     ])
     
 

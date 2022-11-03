@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_090937) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_055919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_090937) do
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
+  create_table "user_assets", force: :cascade do |t|
+    t.bigint "assets_id", null: false
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assets_id"], name: "index_user_assets_on_assets_id"
+    t.index ["users_id"], name: "index_user_assets_on_users_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -64,5 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_090937) do
   add_foreign_key "assets", "categories"
   add_foreign_key "requests", "assets"
   add_foreign_key "requests", "users"
+  add_foreign_key "user_assets", "assets", column: "assets_id"
+  add_foreign_key "user_assets", "users", column: "users_id"
   add_foreign_key "users", "departments"
 end

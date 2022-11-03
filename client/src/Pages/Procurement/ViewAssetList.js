@@ -34,7 +34,7 @@ const ViewAssetList = () => {
           </div>
         )}<br/> 
         <Link to="/assets" className="btn btn-default">
-          <h6><strong>BACK</strong></h6>
+        <h6><strong>BACK</strong></h6>
         </Link>
       </center>
     </div>

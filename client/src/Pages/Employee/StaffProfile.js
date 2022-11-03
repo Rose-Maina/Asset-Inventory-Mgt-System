@@ -1,84 +1,54 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
-function StaffProfile() {
+const StaffProfile = () => {
+
+  const { id } = useParams();
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    axios.get(`/users/${id}`).then((res) => {
+      setUser(res.data);
+    });
+  }, []);
+
+  console.log(user);
+
+
   return (
-    <>
-       <center>
-    <div className="container py-5">
-      <div className="card w-50">
-      <h3 className="card-title py-3">Profile Details</h3>
-        <div className="card-body">
-          
-          <h5 className="card-text">Username</h5>
-          <h6 className="card-text">Email</h6>
-          <h6 className="card-text">Department</h6>
-          <h6 className="card-text">Type</h6>
-
-          <a
-            href="#editEmployeeModal"
-            className="edit"
-            data-toggle="modal"
-            >
-            <i
-             className="material-icons"
-            data-toggle="tooltip"
-            title="Edit"
-            >&#xE254;
-             </i>
-          </a>
+    <div>
+    <center>
+  <div className="container py-5">
+  <h3 className="py-4"><strong>User Details</strong></h3>
+  {user && ( 
+    <div className="card mb- h-100 shadow py-4" style={{maxWidth: 800}}>
+      <div className="row g-1">
+      
+        <div className="col-md-4">
+          <img src="" className="img-fluid rounded-start" alt={user.name} />
         </div>
-      </div>
-      </div>
-
-      {/* Editing Modal  */}
-
-      <div id="editEmployeeModal" className="modal fade">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <form>
-              <div className="modal-header">
-                <h4 className="modal-title">Manage Account</h4>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-hidden="true"
-                >
-                  &times;
-                </button>
-              </div>
-              <div className="modal-body">
-                <div className="form-group">
-                  <label>Username</label>
-                  <input type="text" className="form-control" required />
-                </div>
-                <div className="form-group">
-                  <label>Email</label>
-                  <input type="text" className="form-control" required />
-                </div>
-                <div className="form-group">
-                  <label>Password</label>
-                  <input type="text" className="form-control" required />
-                </div>
-              </div>
-              <div className="modal-footer">
-                <input
-                  type="button"
-                  className="btn btn-default"
-                  data-dismiss="modal"
-                  value="Cancel"
-                />
-                <input type="submit" className="btn btn-info" value="Save" />
-              </div>
-            </form>
-          </div>
+        <div className="col-md-8 h-100 shadow">
+          <div className="card-body text-left">
+            <h5 className="card-text"><strong>Name:</strong> {user.name}</h5><br/>
+            <h5 className="card-text"><strong>Email:</strong> {user.email}</h5><br/>
+            <h5 className="card-text"><strong>Contact:</strong> {user.contact}</h5><br/>
+            <h5 className="card-text"><strong>Role:</strong> {user.user_type}</h5><br/>
+            {/* <h5 className="card-text"><strong>Department:</strong> {user.department.name}</h5><br/> */}             
         </div>
+        </div>
+        
       </div>
-
-    </center>
-    </>
+    </div>
+    )}
+    <Link to="/staffdashboard" className="btn btn-default">
+       <h6><strong>BACK</strong></h6>
+     </Link>
+  </div>
+</center>
+</div>
   );
 }
 
 export default StaffProfile;
-

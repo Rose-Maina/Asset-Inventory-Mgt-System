@@ -53,7 +53,7 @@ function CategoryList() {
               {categories.map((category, index) => (
                   <tr key={index}>
                     <td>
-                    {index + 1}
+                    {/* {index + 1} */}
                     </td>
                     <td>{category.name}</td>
                     <td className="" style={{display: 'flex'}}>

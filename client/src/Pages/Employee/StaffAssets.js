@@ -15,9 +15,9 @@ function StaffAssets() {
     loadAssets();
   }, []);
 
-  function deleteAsset(id) {
-    axios.delete(`/assets/${id}`).then(loadAssets());
-  }
+  // function deleteAsset(id) {
+  //   axios.delete(`/assets/${id}`).then(loadAssets());
+  // }
 
   return (
     <>
@@ -52,8 +52,8 @@ function StaffAssets() {
                     <td>{asset.name}</td>
                     <td className="" style={{display: 'flex'}}>
                     <Link style={{marginRight: 5}}to={`/asset/view/${asset.id}`} className="btn btn-primary">View</Link>
-                    {/* <Link to={`/asset/edit/${asset.id}`} className="btn btn-warning">Edit</Link>
-                    <Link onClick={()=>deleteAsset(asset.id)} to={"#"} className="btn btn-danger">Delete</Link> */}
+                    <Link to={`/asset/edit/${asset.id}`} className="btn btn-warning">Edit</Link>
+                    {/* <Link onClick={()=>deleteAsset(asset.id)} to={"#"} className="btn btn-danger">Delete</Link> */}
                     </td>
                   </tr>
                 ))} 

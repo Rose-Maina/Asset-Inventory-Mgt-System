@@ -12,6 +12,8 @@ import Logout from "./Logout";
 import AddAsset from "../Admin/Assets/AddAsset";
 import EditAsset from "../Admin/Assets/EditAsset";
 import ViewAsset from "../Admin/Assets/ViewAsset";
+import AssignAsset from "./Assets/AssignAsset";
+import UserAsset from "./Assets/UserAsset";
 import EditCategory from "../Admin/Categories/EditCategory";
 import AddDepartment from "../Admin/Departments/AddDepartment";
 import EditDepartment from "../Admin/Departments/EditDepartment";
@@ -21,7 +23,7 @@ import ViewUser from "../Admin/Users/ViewUser";
 import ViewRequest from "../Admin/Requests/ViewRequest";
 import AddRequest from "../Admin/Requests/AddRequest";
 import EditRequest from "../Admin/Requests/EditRequest";
-import Login from "../../Components/Login";
+// import Login from "../../Components/Login";
 
 
 
@@ -30,7 +32,7 @@ function NavPage() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Login/>}/>
+                {/* <Route path="/" element={<Login/>}/> */}
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/users" element={<Users/>}/>
                 <Route path="/Admin/Users/Users.js" element={<Users/>}/> 
@@ -44,7 +46,10 @@ function NavPage() {
                 <Route path="/category/create" element={<AddCategory/>}/>
                 <Route path="/category/edit/:id" element={<EditCategory/>}/>
                 <Route path="/assets" element={<Assets/>}/>
+                <Route path="/assignasset" element={<AssignAsset/>}/>
+                <Route path="/user_assets" element={<UserAsset/>}/>
                 <Route path="/asset/create" element={<AddAsset/>}/>
+                <Route path="/asset/assign" element={<AssignAsset/>}/>
                 <Route path="/asset/view/:id" element={<ViewAsset/>}/>
                 <Route path="/asset/edit/:id" element={<EditAsset/>}/>
                 <Route path="/requests" element={<Request/>}/>

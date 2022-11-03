@@ -83,7 +83,7 @@ function EditRequestList() {
                     <label>Status</label>
                     <select className="form-control" name="status" value={status}
                     onChange={(e) => setStatus(e.target.value)} required>
-                    <option value="in progress" selected>In Progress</option>
+                    <option value="progress" selected>In Progress</option>
                     <option value="approved">Approved</option>
                     <option value="rejected">Rejected</option>
                     <option value="completed">Completed</option>
