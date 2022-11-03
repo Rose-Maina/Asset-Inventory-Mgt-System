@@ -2,22 +2,20 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function AddAsset() {
-  const [name, setName] = useState("");
-  const [image, setImage] = useState("");
-  const [category_id, setCategory_Id] = useState("");
+function AssignAsset() {
+  const [asset_id, setAsset_Id] = useState("");
+  const [user_id, setUser_Id] = useState("");
 
   const navigate = useNavigate();
   const data = {
-    name: name,
-    image: image,
-    category_id: category_id,
+    asset_id: asset_id,
+    user_id: user_id,
   };
 
   function submitForm(e) {
     e.preventDefault();
 
-    axios.post("/assets", data).then(navigate("/assets"));
+    axios.post("/user_assets", data).then(navigate("/user_assets"));
   }
 
   return (
@@ -29,51 +27,54 @@ function AddAsset() {
               <form onSubmit={submitForm}>
                 <div>
                   <h3 className="py-4">
-                    <strong>Add New Asset</strong>
+                    <strong>Assign Asset to User</strong>
                   </h3>
                 </div>
+                {/* <div class="col-sm-6">
+                  <Link to="/asset/assign" className="btn btn-primary">
+                    <i class="material-icons">&#xE147;</i>
+                    Assign Asset to User
+                  </Link>
+                </div> */}
+
                 <div className="form-group">
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="form-control"
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Image Url</label>
-                  <input
-                    type="text"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                    className="form-control"
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Category</label>
+                  <label>Asset Name</label>
                   <select
                     className="form-control"
-                    name="request_type"
-                    value={category_id}
-                    onChange={(e) => setCategory_Id(e.target.value)}
+                    name="asset_id"
+                    value={asset_id}
+                    onChange={(e) => setAsset_Id(e.target.value)}
                     required
                   >
                     <option value="1" selected>
-                      Electronics
+                      Laptop
                     </option>
-                    <option value="2">Stationery</option>
-                    <option value="3">Furniture</option>
+                    <option value="2">Notebook</option>
                   </select>
                 </div>
+
+                <div className="form-group">
+                  <label>Employee Name</label>
+                  <select
+                    className="form-control"
+                    name="user_id"
+                    value={user_id}
+                    onChange={(e) => setUser_Id(e.target.value)}
+                    required
+                  >
+                    <option value="1" selected>
+                      Vinn
+                    </option>
+                    <option value="2">Bruce</option>
+                  </select>
+                </div>
+
                 <div>
                   <Link to="/assets" className="btn btn-default">
                     Cancel
                   </Link>
                   <button type="submit" className="btn btn-success" value="Add">
-                    Add New Asset
+                    Assign Asset
                   </button>
                 </div>
               </form>
@@ -85,4 +86,4 @@ function AddAsset() {
   );
 }
 
-export default AddAsset;
+export default AssignAsset;

@@ -15,9 +15,9 @@ function AssetListFinance() {
     loadAssets();
   }, []);
 
-  function deleteAsset(id) {
-    axios.delete(`/assets/${id}`).then(loadAssets());
-  }
+  // function deleteAsset(id) {
+  //   axios.delete(`/assets/${id}`).then(loadAssets());
+  // }
 
   return (
     <>
@@ -46,7 +46,7 @@ function AssetListFinance() {
                   <th>
                   </th>
                   <th>Name</th>
-                  {/* <th>Actions</th> */}
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,11 +56,11 @@ function AssetListFinance() {
                     {/* {index + 1} */}
                     </td>
                     <td>{asset.name}</td>
-                    {/* <td className="" style={{display: 'flex'}}> */}
-                    {/* <Link style={{marginRight: 5}} to={`/asset/view/${asset.id}`} className="btn btn-primary">View</Link> */}
+                    <td className="" style={{display: 'flex'}}>
+                    <Link style={{marginRight: 5}} to={`/assetviewfinance/view/${asset.id}`} className="btn btn-primary">View</Link>
                     {/* <Link style={{marginRight: 5}}to={`/asset/edit/${asset.id}`} className="btn btn-warning">Edit</Link> */}
                     {/* <Link onClick={()=>deleteAsset(asset.id)} to={"#"} className="btn btn-danger">Delete</Link> */}
-                    {/* </td> */}
+                    </td>
                   </tr>
                 ))} 
               </tbody>

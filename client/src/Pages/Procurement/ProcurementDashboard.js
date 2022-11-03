@@ -7,7 +7,7 @@ function ProcurementDashboard() {
       <div className="container py-5">
         <div className="row row-cols-1 row-cols-md-3 g-4">
           <div className="col">
-            <div div className="card-body h-100 shadow">
+            <div div className="card-body h-100 shadow align-items-center d-flex justify-content-center">
               <Link
                 to="/userslist"
                 className="small-box-footer"
@@ -21,12 +21,12 @@ function ProcurementDashboard() {
                 />{" "}
               </Link>
               <h4 className="py-3" style={{ padding: 30 }}>
-                <strong>USERS</strong>
+                <strong>Users</strong>
               </h4>
             </div>
           </div>
           <div className="col">
-            <div div className="card-body h-100 shadow">
+            <div div className="card-body h-100 shadow align-items-center d-flex justify-content-center">
               <Link
                 to="/departmentlist"
                 className="small-box-footer"
@@ -39,12 +39,12 @@ function ProcurementDashboard() {
                 />{" "}
               </Link>
               <h4 className="py-3" style={{ padding: 30 }}>
-                <strong>DEPARTMENTS</strong>
+                <strong>Departments</strong>
               </h4>
             </div>
           </div>
           <div className="col">
-            <div div className="card-body h-100 shadow">
+            <div div className="card-body h-100 shadow align-items-center d-flex justify-content-center">
               <Link
                 to="/category"
                 className="small-box-footer"
@@ -58,13 +58,13 @@ function ProcurementDashboard() {
                 />{" "}
               </Link>
               <h4 className="py-3" style={{ padding: 30 }}>
-                <strong>CATEGORIES</strong>
+                <strong>Categories</strong>
               </h4>
             </div>
           </div>
 
           <div className="col">
-            <div div className="card-body h-100 shadow">
+            <div div className="card-body h-100 shadow align-items-center d-flex justify-content-center">
               <Link
                 to="/assets"
                 className="small-box-footer"
@@ -77,12 +77,12 @@ function ProcurementDashboard() {
                 />{" "}
               </Link>
               <h4 className="py-3" style={{ padding: 30 }}>
-                <strong>ASSETS</strong>
+                <strong>Assets</strong>
               </h4>
             </div>
           </div>
           <div className="col">
-            <div div className="card-body h-100 shadow">
+            <div div className="card-body h-100 shadow align-items-center d-flex justify-content-center">
               <Link
                 to="/requests"
                 className="small-box-footer"
@@ -95,7 +95,7 @@ function ProcurementDashboard() {
                 />{" "}
               </Link>
               <h4 className="py-3" style={{ padding: 30 }}>
-                <strong>REQUESTS</strong>
+                <strong>Requests</strong>
               </h4>
             </div>
           </div>

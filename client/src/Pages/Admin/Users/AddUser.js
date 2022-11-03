@@ -54,10 +54,10 @@ function AddUser() {
                     <label>Role</label>
                     <select className="form-control" name="request_type" value={user_type}
                     onChange={(e) => setUser_Type(e.target.value)}required>
-                    <option value="regular" selected>Staff</option>
-                    <option value="manager">Manager</option>
-                    <option value="admin">Admin</option>
-                    <option value="finance">Finance</option>
+                    <option value="Admin" selected>Admin</option>
+                    <option value="Procurement">Procurement</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Staff">Staff</option>
                   </select>
                   </div>
                   <div className="form-group">
@@ -68,7 +68,6 @@ function AddUser() {
                     <option value="2">Procurement</option>
                     <option value="3">Finance</option>
                     <option value="4">Accounts</option>
-                    <option value="5">Human Resources</option>
                   </select>
                   </div>
                   <div className="form-group">

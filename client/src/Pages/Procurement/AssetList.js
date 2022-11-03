@@ -53,7 +53,7 @@ function AssetList() {
               {assets.map((asset, index) => (
                   <tr key={index}>
                     <td>
-                    {index + 1}
+                    {/* {index + 1} */}
                     </td>
                     <td>{asset.name}</td>
                     <td className="" style={{display: 'flex'}}>
