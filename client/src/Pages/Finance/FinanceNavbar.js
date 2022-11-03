@@ -10,7 +10,7 @@ function FinanceNavbar() {
         </div>
 
         <div>
-          <p className='title-admin'>Finance</p>
+          <p className='title-admin'>Finance Manager</p>
         </div>
       </div>
     </>

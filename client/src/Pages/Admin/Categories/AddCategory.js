@@ -1,36 +1,51 @@
-import React, {useState} from 'react'
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-function AddCategory({onAddCategory}) {
-    const [name, setName] = useState("");
+function AddCategory() {
+  const [name, setName] = useState("");
 
-  function handleSubmit(e) {
+  const navigate = useNavigate();
+  const data = {
+    name: name,
+  };
+
+  function submitForm(e) {
     e.preventDefault();
-    const categoryData = {
-      name: name,
-   
-    };
-    fetch("/categories", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(categoryData),
-    })
-      .then((r) => r.json())
-      .then((newCategory) => onAddCategory(newCategory));
+    
+    
+    axios.post("/categories", data).then(navigate("/category"));
   }
   return (
-    <form className="NewItem" onSubmit={handleSubmit}>
-      <label>
-        <input
-          type="text" placeholder="Name"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-      <button className='btn btn-success' type="submit">Add to List</button>
-    </form>
+    <div className="container py-5">
+      <center>
+        <div>
+          <div style={{ maxWidth: 400 }}>
+            <div>
+              <form onSubmit={submitForm}>
+                <div>
+                <h3 className="py-4"><strong>Add New Category</strong></h3> 
+                </div>
+                <div>
+                  <div className="form-group">
+                    <label>Name</label>
+                    <input type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" required />
+                  </div>
+                </div>
+                <div>
+                  <Link to="/category" className="btn btn-default">
+                    Cancel
+                  </Link>
+                  <button type="submit" className="btn btn-success" value="Add">
+                    Add Category
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </center>
+    </div>
   );
 }
 

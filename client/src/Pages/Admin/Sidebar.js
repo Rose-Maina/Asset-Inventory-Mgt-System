@@ -32,3 +32,7 @@ function Sidebar() {
 
 
 export default Sidebar;
+
+// const currentUser = localStorage.getItem('role');
+    
+//     const sides = SidebarData.filter(item=>(item.role.includes(currentUser)))

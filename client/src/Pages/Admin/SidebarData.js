@@ -6,11 +6,11 @@ import * as CgIcons from "react-icons/cg";
 
 
 export const SidebarData=[
-    {
-        title: "Home",
-        path: "/",
-        icon: <FaIcons.FaHome />,
-      },
+    // {
+    //     title: "Home",
+    //     path: "/",
+    //     icon: <FaIcons.FaHome />,
+    //   },
       {
         title: "Dashboard",
         path: "/dashboard",
@@ -40,7 +40,7 @@ export const SidebarData=[
       },
       {
         title: "Request",
-        path: "/request",
+        path: "/requests",
         icon: <MdIcons.MdRequestPage />,
       },
       {

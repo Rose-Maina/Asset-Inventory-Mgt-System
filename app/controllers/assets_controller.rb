@@ -18,7 +18,7 @@ class AssetsController < ApplicationController
     def update
         asset = Asset.find_by(id: params[:id])
         if asset
-            asset.update!(asset_params)
+            asset.update!(edit_asset_params)
             render json: asset, status: :created
         else
             render json: {error: "asset not found"}, status: :not_found
@@ -38,6 +38,12 @@ class AssetsController < ApplicationController
     private
     
     def asset_params
-        params.permit(:name)
+        params.permit(:name, :image, :category_id)
     end
+
+    def edit_asset_params
+        params.permit(:name, :image, :category_id)
+    end
+
+
 end

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SideData} from './SidebarData';
+import { FinanceSidebarData } from './FinanceSidebarData';
 import {NavLink} from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ function FinanceSidebar() {
         <>
             <div className="sidebar-list">
             
-                {SideData.map((val, key)=>{
+                {FinanceSidebarData.map((val, key)=>{
                         return(
                             <div key={key}>
                                 <NavLink to={val.path}
