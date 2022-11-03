@@ -1,31 +1,59 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+
+// pages
+import MainPage from "../Pages/Admin/MainPage";
+import FinanceMainPage from "../Pages/Finance/FinanceMainPage"
+import ProcurementMainPage from "../Pages/Procurement/ProcurementMainPage"
 import axios from "axios";
-// import bg1 from "./bg1.jpg";
+
+const Dash = ({ role }) => {
+  return role === "admin" ? (
+    <MainPage />
+  ) : role === "manager" ? (
+    <ProcurementMainPage />
+  ) : (
+    <FinanceMainPage />
+  )
+}
 
 
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
-  const data = {
+function DummyLogin({ setRole, role }) {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+    const data = {
     email: email,
     password: password,
   };
 
   function submitLoginForm(e) {
     e.preventDefault();
-    
     axios.post("/login", data)
-    
-    .then(navigate("/dashboard"));
+    .then(res => {
+      console.log(res.data)
+      if (res?.data?.message.includes('admin'))  {
+        localStorage.setItem(
+          'role', 'admin'
+        )
+        setRole('admin');
+      }
+      else if (res?.data?.message.includes('manager'))  {
+        localStorage.setItem(
+          'role', 'manager'
+        )
+        setRole('manager');
+      }
+      else {
+        localStorage.setItem('role', 'regular')
+        setRole('regular');
+      }
+      // navigate('/dashboard')
+    });
   }
 
-  // style={{ backgroundImage: `url(${bg1})` }}
+    // style={{ backgroundImage: `url(${bg1})` }}
 
-  return (
+  return role != null ? 'Login Success, click on the left menu to navigate!' :(
     <div className="container py-5">
       <center>
         <div className="py-5">
@@ -33,7 +61,7 @@ function Login() {
             <div className="py-5">
               <form onSubmit={submitLoginForm}>
                 <div className="py-5">
-                <h3 className="py-4"><strong>Sign In</strong></h3> 
+                <h3 className="py-4"><strong>Sign In</strong></h3>
                 </div>
                   <div className="form-group">
                     <label><strong>Email</strong></label>
@@ -55,6 +83,15 @@ function Login() {
       </center>
     </div>
   );
+}
+
+function Login() {
+  const altRole = localStorage.getItem('role');
+  const [role, setRole] = React.useState(altRole)
+  return role != null ? (
+    <Dash role={role} />
+  ) : (
+    <DummyLogin setRole={setRole} role={role} /> )
 }
 
 export default Login;

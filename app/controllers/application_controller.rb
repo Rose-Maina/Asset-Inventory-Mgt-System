@@ -47,6 +47,7 @@ class ApplicationController < ActionController::API
 
     #regular employee = mail@mail.com, password: any, (view n add requests)
     #manager = mail@manager.com, password: any, (view, update n approve requests)
+    
     #admin = admin@admin.com, password: admin1234, 
     #admin can view, delete, edit, update all requests, users, assets
 
