@@ -9,7 +9,7 @@ function Dashboard() {
           <div className="col">
             <div div className="card-body h-100 shadow align-items-center d-flex justify-content-center">
               <Link
-                to="/userslist"
+                to="/users"
                 className="small-box-footer"
                 style={{ textDecoration: "none", color: "white", left: 30 }}
               >
@@ -28,7 +28,7 @@ function Dashboard() {
           <div className="col">
             <div div className="card-body h-100 shadow align-items-center d-flex justify-content-center">
               <Link
-                to="/departmentlist"
+                to="/department"
                 className="small-box-footer"
                 style={{ textDecoration: "none", color: "white" }}
               >

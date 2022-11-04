@@ -81,12 +81,12 @@ function Assets() {
                 ))}
               </tbody>
             </table>
-            <div class="col-sm-6">
+            {/* <div class="col-sm-6">
             <Link to="/asset/assign" className="btn btn-success">
                     <i class="material-icons">&#xE147;</i>
                     Assign Asset to User
                   </Link>
-                </div>
+                </div> */}
           </div>
         </div>
       </div>

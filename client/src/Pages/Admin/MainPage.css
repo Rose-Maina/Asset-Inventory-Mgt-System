@@ -1,0 +1,22 @@
+body {
+    background-color: lightgray;
+}
+
+form {
+    background-color: black;
+    border-radius: 20px;
+}
+
+.form-group {
+    color: white;
+}
+
+.form-control {
+    width: 250px;
+}
+
+.py-5 h3 {
+    color: white;
+}
+
+/* #435d7d */

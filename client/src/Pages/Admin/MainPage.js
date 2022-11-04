@@ -1,4 +1,5 @@
 import React from "react";
+import './MainPage.css'
 
 // pages
 
@@ -59,7 +60,7 @@ function DummyLogin({ setRole, role }) {
         <div className="py-5">
           <div style={{ maxWidth: 500 }}>
             <div className="py-5">
-              <form onSubmit={submitLoginForm}>
+              <form className="form" onSubmit={submitLoginForm}>
                 <div className="py-5">
                 <h3 className="py-4"><strong>Sign In</strong></h3>
                 </div>
@@ -72,7 +73,7 @@ function DummyLogin({ setRole, role }) {
                     <input  type="password" value={password} onChange={e=>setPassword(e.target.value)} className="form-control" required />
                   </div>
                 <div className="py-5">
-                  <button type="submit" className="btn btn-success" value="Add">
+                  <button type="submit" className="btn btn-primary" value="Add">
                     LOGIN
                   </button>
                 </div>
