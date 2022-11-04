@@ -1,14 +1,18 @@
-import React from "react";
 
-
-function Logout() {
+  
+import React, { Component } from 'react'
+export default class UserLogout extends Component {
+ 
+ logout = () => {
+    localStorage.clear();
+// you can also like localStorage.removeItem('Token');
+    window.location.href = "/login";
+  }
+ 
+  render() {
     return (
-        <>
-            
-            <form id="logout-form" style="display:none" action="/logout" method="POST"></form>
-        </>
+      <button onClick={this.logout}>Logout</button>
     )
+  }
 }
-
-
-export default Logout;
+ 

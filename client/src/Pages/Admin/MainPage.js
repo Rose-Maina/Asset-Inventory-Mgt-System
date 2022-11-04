@@ -1,18 +1,20 @@
 import React from "react";
 
 // pages
-import StaffMainPage from "../Employee/StaffMainPage";
-import AdminMainPage from "./AdminMainPage";
+
 import ProcurementMainPage from "../Procurement/ProcurementMainPage";
+import AdminMainPage from "./AdminMainPage";
+import FinanceMainPage from "../Finance/FinanceMainPage";
 import axios from "axios";
 
 const Dash = ({ role }) => {
   return role === "admin" ? (
-    <AdminMainPage />
+    <AdminMainPage/>
   ) : role === "manager" ? (
-    <ProcurementMainPage />
+      <ProcurementMainPage
+      />
   ) : (
-    <StaffMainPage />
+    <FinanceMainPage />
   )
 }
 
