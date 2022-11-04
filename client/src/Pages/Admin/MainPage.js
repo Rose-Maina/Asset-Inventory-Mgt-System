@@ -60,7 +60,7 @@ function DummyLogin({ setRole, role }) {
         <div className="py-5">
           <div style={{ maxWidth: 500 }}>
             <div className="py-5">
-              <form className="form" onSubmit={submitLoginForm}>
+              <form className="form-1" onSubmit={submitLoginForm}>
                 <div className="py-5">
                 <h3 className="py-4"><strong>Sign In</strong></h3>
                 </div>
